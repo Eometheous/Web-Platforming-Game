@@ -4,15 +4,22 @@
 
 <b>Current Leader (In order from left to right): </b> Jonathan, Anh, Logan
 
-GitHub URLS: <br> 
+GitHub URLS: 
+<br> 
 https://github.com/Eometheous/Web-Platforming-Game
 
-Job Assignments: <br>
-Jonathan: <br>
+Job Assignments: 
+<br>
+Jonathan: 
+<br>
 Front end flask develeoper. Back-end SQL. Unity Develeoper. 
-Anh: <br>
+<br>
+Anh: 
+<br>
 Unity Developer. Level Designer. Sound Designer. 
-Logan: <br>
+<br>
+Logan: 
+<br>
 Character sprites and animations. Unity Developer. 
 
 Milestones with deadlines:
