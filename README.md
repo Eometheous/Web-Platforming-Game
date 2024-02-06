@@ -23,14 +23,19 @@ Logan:
 Character sprites and animations. Unity Developer. 
 
 Milestones with deadlines:
-```
+
 M1 (2/6 - 2/15): All document details, product specifications, Adobe XD Prototype, and Setting up code and game engine
+<br>
 M2 (2/20 - 2/29): Based on movement and platform, set up log-in and sign-out
+<br>
 M3 (3/5 - 3/14): Store user’s basic data in the database, Set up Lvl 1, Add shooting mechanics, Check that Unity works on the website after signing in
+<br>
 M4 (3/19 - 3/28): Lvl 2 & 3 
+<br>
 M5 (4/2 - 4/11): Beautify the website and add starting screen
+<br>
 M6 (4/16 - Finals): Minor adjustments and testing
-```
+
 
 Front-end and backend technologies:
 Front-end: Svelte, Tailwind, Javascript, CSS, HTML, Unity, Asesprite
