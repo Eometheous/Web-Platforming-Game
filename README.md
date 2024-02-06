@@ -2,22 +2,18 @@
 
 <b>Project Title:</b> 2D Web-platformer PvP Game
 
-<b>Current Leader (In order from left to right): </b>Jonathan, Anh, Logan
+<b>Current Leader (In order from left to right): </b> Jonathan, Anh, Logan
 
 GitHub URLS: <br> 
 https://github.com/Eometheous/Web-Platforming-Game
-https://github.com/ByunTaeyeon02/JumpAndLaunch
 
-Job Assignments (per individual for this week):
-<br>
+Job Assignments: <br>
 Jonathan: <br>
-Setting up GitHub for the website
-
+Front end flask develeoper. Back-end SQL. Unity Develeoper. 
 Anh: <br>
-GitHub for Unity
-
+Unity Developer. Level Designer. Sound Designer. 
 Logan: <br>
-Character sprite animation 
+Character sprites and animations. Unity Developer. 
 
 Milestones with deadlines:
 ```
@@ -32,7 +28,7 @@ M6 (4/16 - Finals): Minor adjustments and testing
 Front-end and backend technologies:
 Front-end: Svelte, Tailwind, Javascript, CSS, HTML, Unity, Asesprite
 
-Back-end: Flask, Python, C#
+Back-end: Flask, Python, C#, SQL
 
 Algorithms/AI schemes used in the core engine:
 N/A yet
