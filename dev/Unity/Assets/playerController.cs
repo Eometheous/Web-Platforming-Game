@@ -38,8 +38,12 @@ public class playerController : MonoBehaviour
         }
 
         Vector2 horizontalMovement = new Vector2(horizontalInput, 0f).normalized;
-        if (touchingGround)
-            rb.AddForce(horizontalMovement * horizontalForceMultiplier);
+
+        // Commented out to enable side movements in air
+        //if (touchingGround)
+            //rb.AddForce(horizontalMovement * horizontalForceMultiplier);
+        rb.AddForce(horizontalMovement * horizontalForceMultiplier);
+
         rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxHorizontalVelocity, maxHorizontalVelocity), rb.velocity.y);
 
         Vector2 verticalMovement = new Vector2(0f, verticalInput).normalized;

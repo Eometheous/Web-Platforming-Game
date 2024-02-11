@@ -7,14 +7,18 @@ public class gameManage : MonoBehaviour
 {
     public playerController player1;
     public playerController player2;
-    public float verticalForceMultiplier = 10f;
-    public float horizontalForceMultiplier = 5f;
-    public float maxVerticalVelocity = 10f;
-    public float maxHorizontalVelocity = 5f;
+    public float verticalForceMultiplier;
+    public float horizontalForceMultiplier;
+    public float maxVerticalVelocity;
+    public float maxHorizontalVelocity;
 
     void Start()
     {
-        resetDefault(); 
+        resetDefault();
+        verticalForceMultiplier = 10f;
+        horizontalForceMultiplier = 5f;
+        maxVerticalVelocity = 10f;
+        maxHorizontalVelocity = 5f;
     }
 
     void Update()
