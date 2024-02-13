@@ -9,7 +9,7 @@ public class playerController : MonoBehaviour
     public float maxVerticalVelocity = 10f;
     public float maxHorizontalVelocity = 5f;
 
-    //public float horizontalInertia = 0.9f;
+    public float slowFactor = 0.5f;
     //private bool jumpLeft = false;
 
     private bool touchingGround = false;
@@ -38,8 +38,21 @@ public class playerController : MonoBehaviour
         }
 
         Vector2 horizontalMovement = new Vector2(horizontalInput, 0f).normalized;
+
+        // Commented out to enable side movements in air
         if (touchingGround)
+        {
             rb.AddForce(horizontalMovement * horizontalForceMultiplier);
+        }
+        else
+        {
+            if (rb.velocity.x < 0 && horizontalInput > 0)
+                rb.AddForce(horizontalMovement * horizontalForceMultiplier * slowFactor);
+            else if (rb.velocity.x > 0 && horizontalInput < 0)
+                rb.AddForce(horizontalMovement * horizontalForceMultiplier * slowFactor);
+            else
+                rb.AddForce(horizontalMovement * horizontalForceMultiplier * slowFactor * slowFactor);
+        }
         rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxHorizontalVelocity, maxHorizontalVelocity), rb.velocity.y);
 
         Vector2 verticalMovement = new Vector2(0f, verticalInput).normalized;

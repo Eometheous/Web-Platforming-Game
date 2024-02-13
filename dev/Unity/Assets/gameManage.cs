@@ -7,41 +7,44 @@ public class gameManage : MonoBehaviour
 {
     public playerController player1;
     public playerController player2;
-    public float verticalForceMultiplier = 10f;
-    public float horizontalForceMultiplier = 5f;
-    public float maxVerticalVelocity = 10f;
-    public float maxHorizontalVelocity = 5f;
+    public float verticalForceMultiplier;
+    public float horizontalForceMultiplier;
+    public float maxVerticalVelocity;
+    public float maxHorizontalVelocity;
+    public float slowFactor;
 
     void Start()
     {
-        resetDefault(); 
+        resetPlayersKeys();
+        verticalForceMultiplier = 10f;
+        horizontalForceMultiplier = 5f;
+        maxVerticalVelocity = 10f;
+        maxHorizontalVelocity = 10f;
+        slowFactor = 0.5f;
     }
 
     void Update()
     {
-        // TEMP
-        player1.verticalForceMultiplier = verticalForceMultiplier;
-        player1.horizontalForceMultiplier = horizontalForceMultiplier;
-        player1.maxVerticalVelocity = maxVerticalVelocity;
-        player1.maxHorizontalVelocity = maxHorizontalVelocity;
-        player2.verticalForceMultiplier = verticalForceMultiplier;
-        player2.horizontalForceMultiplier = horizontalForceMultiplier;
-        player2.maxVerticalVelocity = maxVerticalVelocity;
-        player2.maxHorizontalVelocity = maxHorizontalVelocity;
+        resetDefault();
     }
 
     public void resetDefault()
     {
-        player1.changeKeys(KeyCode.W, KeyCode.S, KeyCode.A, KeyCode.D);
-        player2.changeKeys(KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.LeftArrow, KeyCode.RightArrow);
-
         player1.verticalForceMultiplier = verticalForceMultiplier;
         player1.horizontalForceMultiplier = horizontalForceMultiplier;
         player1.maxVerticalVelocity = maxVerticalVelocity;
         player1.maxHorizontalVelocity = maxHorizontalVelocity;
+        player1.slowFactor = slowFactor;
         player2.verticalForceMultiplier = verticalForceMultiplier;
         player2.horizontalForceMultiplier = horizontalForceMultiplier;
         player2.maxVerticalVelocity = maxVerticalVelocity;
         player2.maxHorizontalVelocity = maxHorizontalVelocity;
+        player2.slowFactor = slowFactor;
+    }
+
+    public void resetPlayersKeys()
+    {
+        player1.changeKeys(KeyCode.W, KeyCode.S, KeyCode.A, KeyCode.D);
+        player2.changeKeys(KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.LeftArrow, KeyCode.RightArrow);
     }
 }
