@@ -62,17 +62,19 @@ public class playerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) {
         Debug.Log("Collided with object of tag: " + collision.gameObject.tag);
-        if (collision.gameObject.tag == "Platform" || collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Platform" || collision.gameObject.tag == "Player" || collision.gameObject.tag == "Wall")
             touchingGround = true;
     }
 
     private void OnCollisionStay2D(Collision2D collision) {
         if (collision.gameObject.tag == "Platform" || collision.gameObject.tag == "Player")
             touchingGround = true;
+        if (collision.gameObject.tag == "Wall")
+            touchingGround = false;
     }
 
     private void OnCollisionExit2D(Collision2D collision) {
-        if (collision.gameObject.tag == "Platform" || collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Platform" || collision.gameObject.tag == "Player" || collision.gameObject.tag == "Wall")
             touchingGround = false;
     }
 
