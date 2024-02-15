@@ -53,8 +53,9 @@ public class playerController : MonoBehaviour
         rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxHorizontalVelocity, maxHorizontalVelocity), rb.velocity.y);
     }
 
+    /*
     private void OnCollisionEnter2D(Collision2D collision) {
-        Debug.Log("Collided with object of tag: " + collision.gameObject.tag);
+        //Debug.Log("Collided with object of tag: " + collision.gameObject.tag);
         if (collision.gameObject.tag == "Platform" || collision.gameObject.tag == "Wall")
             touchingGround = true;
     }
@@ -67,6 +68,26 @@ public class playerController : MonoBehaviour
     }
 
     private void OnCollisionExit2D(Collision2D collision) {
+        if (collision.gameObject.tag == "Platform" || collision.gameObject.tag == "Wall")
+            touchingGround = false;
+    } */
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Platform" || collision.gameObject.tag == "Wall")
+            touchingGround = true;
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Platform")
+            touchingGround = true;
+        if (collision.gameObject.tag == "Wall")
+            touchingGround = false;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
         if (collision.gameObject.tag == "Platform" || collision.gameObject.tag == "Wall")
             touchingGround = false;
     }
