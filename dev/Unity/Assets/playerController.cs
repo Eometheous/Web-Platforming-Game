@@ -5,12 +5,11 @@ using UnityEngine;
 public class playerController : MonoBehaviour
 {
     public float verticalForceMultiplier = 10f;
-    public float horizontalForceMultiplier = 5f;
-    public float maxVerticalVelocity = 10f;
+    public float forceMultiplier = 20f;
+    public float maxVerticalVelocity = 20f;
     public float maxHorizontalVelocity = 5f;
 
-    public float slowFactor = 0.5f;
-    //private bool jumpLeft = false;
+    public float slowFactor = 0.00001f;
 
     private bool touchingGround = false;
     private KeyCode upKey = KeyCode.W;
@@ -34,47 +33,41 @@ public class playerController : MonoBehaviour
 
         float verticalInput = 0f;
         if (Input.GetKey(upKey) && touchingGround) {
-            verticalInput = 1f;
+            verticalInput = 6f;
         }
 
-        Vector2 horizontalMovement = new Vector2(horizontalInput, 0f).normalized;
-
-        // Commented out to enable side movements in air
+        Vector2 movement = new Vector2(horizontalInput * forceMultiplier, verticalInput * forceMultiplier);
+        
         if (touchingGround)
         {
-            rb.AddForce(horizontalMovement * horizontalForceMultiplier);
+            rb.AddForce(movement);
         }
         else
         {
-            if (rb.velocity.x < 0 && horizontalInput > 0)
-                rb.AddForce(horizontalMovement * horizontalForceMultiplier * slowFactor);
-            else if (rb.velocity.x > 0 && horizontalInput < 0)
-                rb.AddForce(horizontalMovement * horizontalForceMultiplier * slowFactor);
-            else
-                rb.AddForce(horizontalMovement * horizontalForceMultiplier * slowFactor * slowFactor);
+            if ((rb.velocity.x < 2f && horizontalInput < 0)|| (rb.velocity.x > -2f && horizontalInput > 0))
+                rb.AddForce(movement * slowFactor * slowFactor);
+            else if ((rb.velocity.x < 2f && horizontalInput > 0) || (rb.velocity.x > -2f && horizontalInput < 0)) 
+                rb.AddForce(movement * slowFactor * slowFactor * slowFactor);
         }
-        rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxHorizontalVelocity, maxHorizontalVelocity), rb.velocity.y);
 
-        Vector2 verticalMovement = new Vector2(0f, verticalInput).normalized;
-        rb.AddForce(verticalMovement * verticalForceMultiplier);
-        rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -maxVerticalVelocity, maxVerticalVelocity));
+        rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxHorizontalVelocity, maxHorizontalVelocity), rb.velocity.y);
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
         Debug.Log("Collided with object of tag: " + collision.gameObject.tag);
-        if (collision.gameObject.tag == "Platform" || collision.gameObject.tag == "Player" || collision.gameObject.tag == "Wall")
+        if (collision.gameObject.tag == "Platform" || collision.gameObject.tag == "Wall")
             touchingGround = true;
     }
 
     private void OnCollisionStay2D(Collision2D collision) {
-        if (collision.gameObject.tag == "Platform" || collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Platform")
             touchingGround = true;
         if (collision.gameObject.tag == "Wall")
             touchingGround = false;
     }
 
     private void OnCollisionExit2D(Collision2D collision) {
-        if (collision.gameObject.tag == "Platform" || collision.gameObject.tag == "Player" || collision.gameObject.tag == "Wall")
+        if (collision.gameObject.tag == "Platform" || collision.gameObject.tag == "Wall")
             touchingGround = false;
     }
 
