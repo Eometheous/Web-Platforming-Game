@@ -31,12 +31,12 @@ public class gameManage : MonoBehaviour
     public void resetDefault()
     {
         player1.verticalForceMultiplier = verticalForceMultiplier;
-        player1.horizontalForceMultiplier = horizontalForceMultiplier;
+        player1.forceMultiplier = horizontalForceMultiplier;
         player1.maxVerticalVelocity = maxVerticalVelocity;
         player1.maxHorizontalVelocity = maxHorizontalVelocity;
         player1.slowFactor = slowFactor;
         player2.verticalForceMultiplier = verticalForceMultiplier;
-        player2.horizontalForceMultiplier = horizontalForceMultiplier;
+        player2.forceMultiplier = horizontalForceMultiplier;
         player2.maxVerticalVelocity = maxVerticalVelocity;
         player2.maxHorizontalVelocity = maxHorizontalVelocity;
         player2.slowFactor = slowFactor;
