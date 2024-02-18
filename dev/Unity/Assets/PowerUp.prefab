@@ -133,7 +133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbda7b64b6e07c0448aa6211b9513397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectTime: 0
-  affectedPlayer: {fileID: 0}
-  type: 
-  initEffect: 0
+  effectTime: 10
+  rangeRadius: 10
+  forceMultiplier: 5
+  Type: 0
+  player1: {fileID: 0}
+  player2: {fileID: 0}

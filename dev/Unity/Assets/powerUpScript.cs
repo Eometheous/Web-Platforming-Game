@@ -1,22 +1,25 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class powerUpScript : MonoBehaviour
 {
     public float effectTime = 60.0f;
+    public float rangeRadius = 10.0f;
+    public float forceMultiplier = 2500.0f;
+    private float ActiveCooldown = 2.5f;
+    private float lastActiveTime;
     private bool startTimer;
-    //public playerController affectedPlayer;
-    //public bool attackPowerUps;
-    public bool initEffect;
-    //public bool play1Affected;
+    private bool initEffect;
 
     public enum powerUpType
     {
         reverseGravity,
-        reverseKeys
+        reverseKeys,
+        push
     }
     public powerUpType Type;
 
@@ -28,6 +31,7 @@ public class powerUpScript : MonoBehaviour
     {
         initEffect = false;
         startTimer = false;
+        lastActiveTime = -ActiveCooldown;
     }
 
     void Update()
@@ -61,6 +65,27 @@ public class powerUpScript : MonoBehaviour
                 }
                 Destroy(gameObject);
             }
+            if (!isPassive())
+            {
+                if (Input.GetKey(playerAffected.downKey))
+                {
+                    TryActivate();
+                }
+            }
+        }
+    }
+
+    private void TryActivate()
+    {
+        if (Time.time - lastActiveTime >= ActiveCooldown)
+        {
+            switch (Type)
+            {
+                case powerUpType.push:
+                    push();
+                    break;
+            }
+            lastActiveTime = Time.time;
         }
     }
 
@@ -76,17 +101,48 @@ public class powerUpScript : MonoBehaviour
         playerAffected.reverseKeys = !playerAffected.reverseKeys;
     }
 
-    private bool isAttackPowerUp()
+    private void push()
     {
-        bool isAttack = false;
+        playerController playerPushed = player1;
+        if (playerAffected == player1)
+            playerPushed = player2;
+
+        float distance = Vector3.Distance(playerAffected.transform.position, playerPushed.transform.position);
+        if (distance <= rangeRadius)        // In range
+        {
+            float distanceFactor = 1f - Mathf.Clamp01(distance / rangeRadius);
+            float xVec = playerPushed.transform.position.x - playerAffected.transform.position.x;
+            float yVec = playerPushed.transform.position.y - playerAffected.transform.position.y;
+            Vector2 movement = new Vector2(xVec, yVec);
+            movement.Normalize();
+            playerPushed.GetComponent<Rigidbody2D>().AddForce(movement * forceMultiplier * distanceFactor);
+        }
+    }
+
+    private bool isCurrentPlayerAffected()
+    {
+        bool isCurPlayerAffected= false;
         switch (Type)
         {
             case powerUpType.reverseGravity:
             case powerUpType.reverseKeys:
-                isAttack = true;
+                isCurPlayerAffected = true;
                 break;
         }
-        return isAttack;
+        return isCurPlayerAffected;
+    }
+
+    private bool isPassive()
+    {
+        bool passive = false;
+        switch (Type)
+        {
+            case powerUpType.reverseGravity:
+            case powerUpType.reverseKeys:
+                passive = true;
+                break;
+        }
+        return passive;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -96,8 +152,8 @@ public class powerUpScript : MonoBehaviour
             if (playerAffected == null)
             {
                 //Debug.Log(collision.GetComponent<playerController>() == player1.GetComponent<playerController>());
-                bool play1Affected = (collision.GetComponent<playerController>() == player1.GetComponent<playerController>() && !isAttackPowerUp()) ||
-                                     (collision.GetComponent<playerController>() == player2.GetComponent<playerController>() && isAttackPowerUp());
+                bool play1Affected = (collision.GetComponent<playerController>() == player1.GetComponent<playerController>() && !isCurrentPlayerAffected()) ||
+                                     (collision.GetComponent<playerController>() == player2.GetComponent<playerController>() && isCurrentPlayerAffected());
                 if (play1Affected)
                     playerAffected = player1.GetComponent<playerController>();
                 else

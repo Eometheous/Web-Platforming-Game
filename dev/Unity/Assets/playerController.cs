@@ -12,10 +12,10 @@ public class playerController : MonoBehaviour
     public float slowFactor = 0.00001f;
 
     private bool touchingGround = false;
-    private KeyCode upKey = KeyCode.W;
-    private KeyCode downKey = KeyCode.S;
-    private KeyCode leftKey = KeyCode.A;
-    private KeyCode rightKey = KeyCode.D;
+    public KeyCode upKey = KeyCode.W;
+    public KeyCode downKey = KeyCode.S;
+    public KeyCode leftKey = KeyCode.A;
+    public KeyCode rightKey = KeyCode.D;
     private Rigidbody2D rb;
 
     public bool reverseJump = false;
