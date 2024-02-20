@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Platform
   - Wall
+  - powerUp
   layers:
   - Default
   - TransparentFX
@@ -51,6 +52,9 @@ TagManager:
     locked: 0
   - name: Platform
     uniqueID: 1116198465
+    locked: 0
+  - name: PowerUps
+    uniqueID: 3063076959
     locked: 0
   - name: UI
     uniqueID: 63906625

@@ -43,3 +43,4 @@ Assets/StreamingAssets/crashlytics-build.properties
 *.log
 **/logs
 logs/
+*.dwlt
