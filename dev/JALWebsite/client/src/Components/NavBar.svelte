@@ -1,10 +1,19 @@
 <html lang="en">
 	<nav>
-		<h1>NavBar</h1>
+		<h1>JAL</h1>
 		<ul>
 			<li>
 					<a href="/">Home</a>
 			</li>
+			<li>
+					<a href="/Score">Score</a>
+			</li>
+            <li>
+                    <a href="/Settings">Settings</a>
+            </li>
+            <li>
+                    <a href="/Logout">Logout</a>
+            </li>   
 		</ul>
 	</nav>
 </html>
