@@ -16,6 +16,7 @@ public class playerController : MonoBehaviour
     public KeyCode downKey = KeyCode.S;
     public KeyCode leftKey = KeyCode.A;
     public KeyCode rightKey = KeyCode.D;
+    public KeyCode actionKey = KeyCode.Space;
     private Rigidbody2D rb;
 
     public bool reverseJump = false;
@@ -55,8 +56,6 @@ public class playerController : MonoBehaviour
         if (touchingGround)
         {
             rb.AddForce(movement * Time.deltaTime);
-            //Debug.Log("touching ground 1: " +  movement);
-            //Debug.Log("touching ground 2: " + movement * Time.deltaTime * ratio);
         }
         else
         {
@@ -89,10 +88,11 @@ public class playerController : MonoBehaviour
             touchingGround = false;
     }
 
-    public void changeKeys(KeyCode up, KeyCode down, KeyCode left, KeyCode right) {
+    public void changeKeys(KeyCode up, KeyCode down, KeyCode left, KeyCode right, KeyCode action) {
         upKey = up;
         downKey = down;
         leftKey = left;
         rightKey = right;
+        actionKey = action;
     }
 }

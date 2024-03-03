@@ -66,7 +66,7 @@ public class powerUpScript : MonoBehaviour
             }
             if (!isPassive())
             {
-                if (Input.GetKey(playerAffected.downKey))
+                if (Input.GetKey(playerAffected.actionKey))
                 {
                     TryActivate();
                 }
