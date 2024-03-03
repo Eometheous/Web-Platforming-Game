@@ -44,7 +44,7 @@ public class gameManage : MonoBehaviour
 
     public void resetPlayersKeys()
     {
-        player1.changeKeys(KeyCode.W, KeyCode.S, KeyCode.A, KeyCode.D);
-        player2.changeKeys(KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.LeftArrow, KeyCode.RightArrow);
+        player1.changeKeys(KeyCode.W, KeyCode.S, KeyCode.A, KeyCode.D, KeyCode.Space);
+        player2.changeKeys(KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.LeftArrow, KeyCode.RightArrow, KeyCode.Return);
     }
 }

@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class powerUpScript : MonoBehaviour
@@ -67,7 +66,7 @@ public class powerUpScript : MonoBehaviour
             }
             if (!isPassive())
             {
-                if (Input.GetKey(playerAffected.downKey))
+                if (Input.GetKey(playerAffected.actionKey))
                 {
                     TryActivate();
                 }
