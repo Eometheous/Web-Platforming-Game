@@ -1,7 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using UnityEditor.Build.Player;
 using UnityEngine;
 
 public class pointerController : MonoBehaviour
@@ -19,7 +16,7 @@ public class pointerController : MonoBehaviour
     public KeyCode rightKey;
     public KeyCode actionKey;
 
-    public float moveSpeed = 5.0f;
+    public float moveSpeed = 250.0f;
     public Collider2D hoverOn;
 
     public GameObject readyBar;
@@ -75,7 +72,7 @@ public class pointerController : MonoBehaviour
         }
 
         Vector2 movement = new Vector2(horizontalInput, verticalInput);
-        GetComponent<Rigidbody2D>().AddForce(movement);
+        GetComponent<Rigidbody2D>().AddForce(movement * Time.deltaTime * moveSpeed);
     }
 
     private void customize()
@@ -92,7 +89,6 @@ public class pointerController : MonoBehaviour
         }
         if (hoverOn.gameObject.name == "f1")
         {
-            //UnityEngine.Debug.Log("pressed on f1");
             customizeManager.changeFace(playerInt, 0);
         } 
         else if (hoverOn.gameObject.name == "f2")
@@ -141,15 +137,12 @@ public class pointerController : MonoBehaviour
     IEnumerator ChangeColorWithDelay()
     {
         canChangeColor = false;
-        //UnityEngine.Debug.Log(hoverOn + " : " + readyBar.GetComponent<Collider2D>());
         if (hoverOn == readyBar.GetComponent<Collider2D>())
         {
-            UnityEngine.Debug.Log("Click ready");
             if (readyBar.GetComponent<SpriteRenderer>().color != Color.green)
             {
                 readyBar.GetComponent<SpriteRenderer>().color = Color.green;
                 readyCap.GetComponent<SpriteRenderer>().color = Color.green;
-                UnityEngine.Debug.Log("Change color to green");
             }
             else
             {

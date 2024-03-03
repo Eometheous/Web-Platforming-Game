@@ -3,7 +3,23 @@ guid: f77f2ccfc24eede41b90c8a440efefaf
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - pointer1: {instanceID: 0}
+  - pointer2: {instanceID: 0}
+  - readyBar1: {instanceID: 0}
+  - readyBar2: {instanceID: 0}
+  - player1Preview: {instanceID: 0}
+  - player2Preview: {instanceID: 0}
+  - face1: {fileID: 8688208573850650992, guid: bae40289098f41b4a88d0c9ebdb8802b, type: 3}
+  - face2: {fileID: 5877217286367322775, guid: 7c7d87b30d99d0b4e85927114faaeb9a, type: 3}
+  - face3: {fileID: 3700054673794006774, guid: 10b00b7c25bfc9b4ebfe9896d2446871, type: 3}
+  - color1: {fileID: 9159178337381235022, guid: cf9c84f131b21d6409e7e22f52bc13e1, type: 3}
+  - color2: {fileID: 890031134080229238, guid: 7f12d327d5d48334595c986453a1feb4, type: 3}
+  - color3: {fileID: 6905887467266290708, guid: f09fb183e37c1a647a5ec9cadd63ce69, type: 3}
+  - color4: {fileID: 4025565940433062088, guid: 28dbde10e28bdee43b39d784a519cfbe, type: 3}
+  - color5: {fileID: 2041848084284656683, guid: c7b38234a927d3848b947ad97df818d4, type: 3}
+  - color6: {fileID: 5205952616807429894, guid: decc8b992d5552f44b98a30ff6dbf675, type: 3}
+  - color7: {fileID: 5602890540962070908, guid: 7806ba80bffd6ec4e92a70e76b7b30eb, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

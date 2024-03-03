@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static pointerController;
 
 public class customizeManager : MonoBehaviour
 {
@@ -14,30 +15,42 @@ public class customizeManager : MonoBehaviour
     public GameObject player1Preview;
     public GameObject player2Preview;
 
-    public GameObject face1;
-    public GameObject face2;
-    public GameObject face3;
+    public List<GameObject> faceList;
+    public List<GameObject> colorList;
+    public data data;
 
-    public GameObject color1;
-    public GameObject color2;
-    public GameObject color3;
-    public GameObject color4;
-    public GameObject color5;
-    public GameObject color6;
-    public GameObject color7;
+    void Start()
+    {
+        targetSceneName = "Basic Level";
+
+        data.initList();
+        faceList = data.faceList;
+        colorList = data.colorList;
+
+        PlayerPrefs.SetInt("Player1FaceNum", 0);
+        PlayerPrefs.SetInt("Player1ColorNum", 0);
+        PlayerPrefs.SetInt("Player2FaceNum", 0);
+        PlayerPrefs.SetInt("Player2ColorNum", 0);
+        PlayerPrefs.Save();
+    }
 
     public void changeFace(int playerNum, int faceNum)
     {
         GameObject previewChanged = player1Preview;
         if (playerNum == 2)
             previewChanged = player2Preview;
-        
-        if (faceNum == 0)
-            previewChanged.GetComponent<SpriteRenderer>().sprite = face1.GetComponent<SpriteRenderer>().sprite;
-        else if (faceNum == 1)
-            previewChanged.GetComponent<SpriteRenderer>().sprite = face2.GetComponent<SpriteRenderer>().sprite;
-        else if (faceNum == 2)
-            previewChanged.GetComponent<SpriteRenderer>().sprite = face3.GetComponent<SpriteRenderer>().sprite;
+        string faceString = "Player" + playerNum + "FaceNum";
+
+        for (int i = 0; i < faceList.Count; i++)
+        {
+            if (faceNum == i)
+            {
+                previewChanged.GetComponent<SpriteRenderer>().sprite = faceList[i].GetComponent<SpriteRenderer>().sprite;
+                PlayerPrefs.SetInt(faceString, i);
+                Debug.Log(faceString + ": " + i);
+                PlayerPrefs.Save();
+            }
+        }
     }
 
     public void changeColor(int playerNum, int colorNum)
@@ -45,26 +58,18 @@ public class customizeManager : MonoBehaviour
         GameObject previewChanged = player1Preview;
         if (playerNum == 2)
             previewChanged = player2Preview;
-        
-        if (colorNum == 0)
-            previewChanged.GetComponent<SpriteRenderer>().color = color1.GetComponent<SpriteRenderer>().color;
-        else if (colorNum == 1)
-            previewChanged.GetComponent<SpriteRenderer>().color = color2.GetComponent<SpriteRenderer>().color;
-        else if (colorNum == 2)
-            previewChanged.GetComponent<SpriteRenderer>().color = color3.GetComponent<SpriteRenderer>().color;
-        else if (colorNum == 3)
-            previewChanged.GetComponent<SpriteRenderer>().color = color4.GetComponent<SpriteRenderer>().color;
-        else if (colorNum == 4)
-            previewChanged.GetComponent<SpriteRenderer>().color = color5.GetComponent<SpriteRenderer>().color;
-        else if (colorNum == 5)
-            previewChanged.GetComponent<SpriteRenderer>().color = color6.GetComponent<SpriteRenderer>().color;
-        else if (colorNum == 6)
-            previewChanged.GetComponent<SpriteRenderer>().color = color7.GetComponent<SpriteRenderer>().color;
-    }
+        string colorString = "Player" + playerNum + "ColorNum";
 
-    void Start()
-    {
-        targetSceneName = "Basic Level";
+        for (int i = 0; i < colorList.Count; i++)
+        {
+            if (colorNum == i)
+            {
+                previewChanged.GetComponent<SpriteRenderer>().color = colorList[i].GetComponent<SpriteRenderer>().color;
+                PlayerPrefs.SetInt(colorString, i);
+                Debug.Log(colorString + ": " + i);
+                PlayerPrefs.Save();
+            }
+        }
     }
 
     public void startGame()
