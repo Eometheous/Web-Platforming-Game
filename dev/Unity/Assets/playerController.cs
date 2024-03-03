@@ -21,8 +21,13 @@ public class playerController : MonoBehaviour
     public bool reverseJump = false;
     public bool reverseKeys = false;
 
+    public float verticalRatio = 750.0f;
+    public float horizontalRatio = 500.0f;
+
     void Start() {
         rb = GetComponent<Rigidbody2D>();
+        verticalRatio = 750.0f;
+        horizontalRatio = 500.0f;
     }
 
     // Update is called once per frame
@@ -45,41 +50,24 @@ public class playerController : MonoBehaviour
                 verticalInput *= -1;
         }
 
-        Vector2 movement = new Vector2(horizontalInput * forceMultiplier, verticalInput * forceMultiplier);
+        Vector2 movement = new Vector2(horizontalInput * forceMultiplier * horizontalRatio, verticalInput * forceMultiplier * verticalRatio);
         
         if (touchingGround)
         {
-            rb.AddForce(movement);
+            rb.AddForce(movement * Time.deltaTime);
+            //Debug.Log("touching ground 1: " +  movement);
+            //Debug.Log("touching ground 2: " + movement * Time.deltaTime * ratio);
         }
         else
         {
             if ((rb.velocity.x < 2f && horizontalInput < 0)|| (rb.velocity.x > -2f && horizontalInput > 0))
-                rb.AddForce(movement * slowFactor * slowFactor);
+                rb.AddForce(movement * slowFactor * slowFactor * Time.deltaTime);
             else if ((rb.velocity.x < 2f && horizontalInput > 0) || (rb.velocity.x > -2f && horizontalInput < 0)) 
-                rb.AddForce(movement * slowFactor * slowFactor * slowFactor);
+                rb.AddForce(movement * slowFactor * slowFactor * slowFactor * Time.deltaTime);
         }
 
         rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxHorizontalVelocity, maxHorizontalVelocity), rb.velocity.y);
     }
-
-    /*
-    private void OnCollisionEnter2D(Collision2D collision) {
-        //Debug.Log("Collided with object of tag: " + collision.gameObject.tag);
-        if (collision.gameObject.tag == "Platform" || collision.gameObject.tag == "Wall")
-            touchingGround = true;
-    }
-
-    private void OnCollisionStay2D(Collision2D collision) {
-        if (collision.gameObject.tag == "Platform")
-            touchingGround = true;
-        if (collision.gameObject.tag == "Wall")
-            touchingGround = false;
-    }
-
-    private void OnCollisionExit2D(Collision2D collision) {
-        if (collision.gameObject.tag == "Platform" || collision.gameObject.tag == "Wall")
-            touchingGround = false;
-    } */
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
