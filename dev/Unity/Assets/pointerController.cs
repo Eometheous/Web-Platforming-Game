@@ -77,6 +77,10 @@ public class pointerController : MonoBehaviour
 
     private void customize()
     {
+        if (hoverOn.gameObject.name == "f1")
+        {
+            UnityEngine.Debug.Log("pressed on f1");
+        }
         if (canChangeColor)
         {
             StartCoroutine(ChangeColorWithDelay());
@@ -111,7 +115,6 @@ public class pointerController : MonoBehaviour
         if (other.isTrigger)
         {
             hoverOn = other;
-            //UnityEngine.Debug.Log("Trigger entered " + player + ": " + other.name);
         }
     }
 
@@ -122,12 +125,13 @@ public class pointerController : MonoBehaviour
             hoverOn = collision;
         }
     }
+    
+    /**
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.isTrigger)
         {
             hoverOn = null;
-            //UnityEngine.Debug.Log("Trigger exit");
         }
-    }
+    } **/
 }
