@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using UnityEditor.Build.Player;
 using UnityEngine;
 
 public class pointerController : MonoBehaviour
@@ -24,6 +25,8 @@ public class pointerController : MonoBehaviour
     public GameObject readyBar;
     public GameObject readyCap;
     private bool canChangeColor = true;
+
+    public customizeManager customizeManager;
 
     private void Start()
     {
@@ -77,10 +80,58 @@ public class pointerController : MonoBehaviour
 
     private void customize()
     {
+        int playerInt = 0;
+        switch (player)
+        {
+            case playerNum.player1:
+                playerInt = 1;
+                break;
+            case playerNum.player2:
+                playerInt = 2;
+                break;
+        }
         if (hoverOn.gameObject.name == "f1")
         {
-            UnityEngine.Debug.Log("pressed on f1");
+            //UnityEngine.Debug.Log("pressed on f1");
+            customizeManager.changeFace(playerInt, 0);
+        } 
+        else if (hoverOn.gameObject.name == "f2")
+        {
+            customizeManager.changeFace(playerInt, 1);
         }
+        else if (hoverOn.gameObject.name == "f3")
+        {
+            customizeManager.changeFace(playerInt, 2);
+        }
+        else if (hoverOn.gameObject.name == "cw")
+        {
+            customizeManager.changeColor(playerInt, 0);
+        }
+        else if (hoverOn.gameObject.name == "cr")
+        {
+            customizeManager.changeColor(playerInt, 1);
+        }
+        else if (hoverOn.gameObject.name == "co")
+        {
+            customizeManager.changeColor(playerInt, 2);
+        }
+        else if (hoverOn.gameObject.name == "cy")
+        {
+            customizeManager.changeColor(playerInt, 3);
+        }
+        else if (hoverOn.gameObject.name == "cg")
+        {
+            customizeManager.changeColor(playerInt, 4);
+        }
+        else if (hoverOn.gameObject.name == "cb")
+        {
+            customizeManager.changeColor(playerInt, 5);
+        }
+        else if (hoverOn.gameObject.name == "cp")
+        {
+            customizeManager.changeColor(playerInt, 6);
+        }
+
         if (canChangeColor)
         {
             StartCoroutine(ChangeColorWithDelay());
@@ -125,13 +176,4 @@ public class pointerController : MonoBehaviour
             hoverOn = collision;
         }
     }
-    
-    /**
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.isTrigger)
-        {
-            hoverOn = null;
-        }
-    } **/
 }

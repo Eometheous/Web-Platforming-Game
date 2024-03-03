@@ -1259,6 +1259,7 @@ MonoBehaviour:
   hoverOn: {fileID: 0}
   readyBar: {fileID: 1353823584}
   readyCap: {fileID: 571569691}
+  customizeManager: {fileID: 2064701106}
 --- !u!58 &595233237
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3849,6 +3850,7 @@ MonoBehaviour:
   hoverOn: {fileID: 0}
   readyBar: {fileID: 1385399536}
   readyCap: {fileID: 1665055829}
+  customizeManager: {fileID: 2064701106}
 --- !u!50 &1662810032
 Rigidbody2D:
   serializedVersion: 4
@@ -4864,6 +4866,18 @@ MonoBehaviour:
   pointer2: {fileID: 1662810031}
   readyBar1: {fileID: 1353823584}
   readyBar2: {fileID: 1385399536}
+  player1Preview: {fileID: 1682425972}
+  player2Preview: {fileID: 1937832047}
+  face1: {fileID: 1478408931}
+  face2: {fileID: 95056007}
+  face3: {fileID: 611825818}
+  color1: {fileID: 924810693}
+  color2: {fileID: 725864946}
+  color3: {fileID: 1906160605}
+  color4: {fileID: 1308080460}
+  color5: {fileID: 2022583278}
+  color6: {fileID: 1678868458}
+  color7: {fileID: 845750120}
 --- !u!4 &2064701107
 Transform:
   m_ObjectHideFlags: 0
