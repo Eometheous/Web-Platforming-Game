@@ -515,7 +515,7 @@ PrefabInstance:
     - target: {fileID: 8064570501180407143, guid: 64bad3c15de8c374cb04b0dec5880a24, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 215dcb96d67438b4b9c016cbd1e44993, type: 3}
+      objectReference: {fileID: 21300000, guid: 49bdee3f690c4b84fb07e0ea732e1396, type: 3}
     - target: {fileID: 8281003831192242161, guid: 64bad3c15de8c374cb04b0dec5880a24, type: 3}
       propertyPath: m_Name
       value: PowerUp (2)
@@ -561,7 +561,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.8784314, g: 0.8784314, b: 0.8784314, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1939,6 +1939,10 @@ PrefabInstance:
       propertyPath: m_LocalAABB.m_Extent.y
       value: 3.3415189
       objectReference: {fileID: 0}
+    - target: {fileID: 7298342902257892477, guid: 1a77ba384606ab941a581e2ea61fdc5d, type: 3}
+      propertyPath: m_Sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 52dd914bd1365d1438e028ae3a931921, type: 3}
     - target: {fileID: 7571201913739542559, guid: 1a77ba384606ab941a581e2ea61fdc5d, type: 3}
       propertyPath: m_Name
       value: platformV2 (3)
@@ -2072,6 +2076,10 @@ PrefabInstance:
       propertyPath: m_LocalAABB.m_Extent.y
       value: 0.50685394
       objectReference: {fileID: 0}
+    - target: {fileID: 7298342902257892477, guid: 1a77ba384606ab941a581e2ea61fdc5d, type: 3}
+      propertyPath: m_Sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 52dd914bd1365d1438e028ae3a931921, type: 3}
     - target: {fileID: 7571201913739542559, guid: 1a77ba384606ab941a581e2ea61fdc5d, type: 3}
       propertyPath: m_Name
       value: platformV2 (1)
@@ -2252,7 +2260,7 @@ PrefabInstance:
     - target: {fileID: 8064570501180407143, guid: 64bad3c15de8c374cb04b0dec5880a24, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 215dcb96d67438b4b9c016cbd1e44993, type: 3}
+      objectReference: {fileID: 21300000, guid: 49bdee3f690c4b84fb07e0ea732e1396, type: 3}
     - target: {fileID: 8281003831192242161, guid: 64bad3c15de8c374cb04b0dec5880a24, type: 3}
       propertyPath: m_Name
       value: PowerUp (1)
@@ -2386,6 +2394,10 @@ PrefabInstance:
       propertyPath: m_LocalAABB.m_Extent.y
       value: 0.503028
       objectReference: {fileID: 0}
+    - target: {fileID: 7298342902257892477, guid: 1a77ba384606ab941a581e2ea61fdc5d, type: 3}
+      propertyPath: m_Sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 52dd914bd1365d1438e028ae3a931921, type: 3}
     - target: {fileID: 7571201913739542559, guid: 1a77ba384606ab941a581e2ea61fdc5d, type: 3}
       propertyPath: m_Name
       value: platformV2
@@ -2694,6 +2706,10 @@ PrefabInstance:
       propertyPath: m_LocalAABB.m_Extent.y
       value: 0.5093781
       objectReference: {fileID: 0}
+    - target: {fileID: 7298342902257892477, guid: 1a77ba384606ab941a581e2ea61fdc5d, type: 3}
+      propertyPath: m_Sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 52dd914bd1365d1438e028ae3a931921, type: 3}
     - target: {fileID: 7571201913739542559, guid: 1a77ba384606ab941a581e2ea61fdc5d, type: 3}
       propertyPath: m_Name
       value: platformV2 (2)
@@ -3044,7 +3060,7 @@ PrefabInstance:
     - target: {fileID: 8064570501180407143, guid: 64bad3c15de8c374cb04b0dec5880a24, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 215dcb96d67438b4b9c016cbd1e44993, type: 3}
+      objectReference: {fileID: 21300000, guid: 49bdee3f690c4b84fb07e0ea732e1396, type: 3}
     - target: {fileID: 8281003831192242161, guid: 64bad3c15de8c374cb04b0dec5880a24, type: 3}
       propertyPath: m_Name
       value: PowerUp
@@ -3626,6 +3642,10 @@ PrefabInstance:
       propertyPath: m_LocalAABB.m_Extent.y
       value: 3.2564697
       objectReference: {fileID: 0}
+    - target: {fileID: 7298342902257892477, guid: 1a77ba384606ab941a581e2ea61fdc5d, type: 3}
+      propertyPath: m_Sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 52dd914bd1365d1438e028ae3a931921, type: 3}
     - target: {fileID: 7571201913739542559, guid: 1a77ba384606ab941a581e2ea61fdc5d, type: 3}
       propertyPath: m_Name
       value: platformV2
