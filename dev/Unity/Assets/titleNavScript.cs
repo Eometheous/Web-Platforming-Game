@@ -8,12 +8,14 @@ public class titleNavScript : MonoBehaviour
     private string startGame;
     private string tutorial;
     private string settings;
+    private string title;
 
     void Start()
     {
         startGame = "Customize Players";
         tutorial = "Tutorial";
         settings = "Settings";
+        title = "Title";
     }
 
     public void navStartGame()
@@ -29,5 +31,10 @@ public class titleNavScript : MonoBehaviour
     public void navSettings()
     {
         SceneManager.LoadScene(settings);
+    }
+
+    public void navTitle()
+    {
+        SceneManager.LoadScene(title);
     }
 }
