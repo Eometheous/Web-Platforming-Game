@@ -7,6 +7,8 @@ TagManager:
   - Platform
   - Wall
   - powerUp
+  - color
+  - face
   layers:
   - Default
   - TransparentFX
