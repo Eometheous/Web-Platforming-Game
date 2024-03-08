@@ -114,7 +114,7 @@ public class powerUpScript : MonoBehaviour
             float yVec = playerPushed.transform.position.y - playerAffected.transform.position.y;
             Vector2 movement = new Vector2(xVec, yVec);
             movement.Normalize();
-            playerPushed.GetComponent<Rigidbody2D>().AddForce(movement * forceMultiplier * distanceFactor);
+            playerPushed.GetComponent<Rigidbody2D>().AddForce(movement * forceMultiplier * distanceFactor * Time.deltaTime);
         }
     }
 
