@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class cameraMovement : MonoBehaviour
 {
-    public Transform mainCamera;
-    public Transform target;
+    [SerializeField] private Camera mainCamera;
+    [SerializeField] private GameObject target;
+    [SerializeField] private Camera mainCamera2;
+    [SerializeField] private GameObject target2;
     public float smoothSpeed = 10.0f;
-    public float yOffset = 0.0f;
     float minYPosition = -25.0f;
     float maxYPosition = 0.0f;
+    float minXPosition = -8.9f;
+    float maxXPosition = 8.9f;
 
-    void LateUpdate()
+    private void Update()
     {
-        if (target != null)
-        {
-            Vector3 desiredPosition = new Vector3(0f, Mathf.Clamp(target.position.y + yOffset, minYPosition, maxYPosition), mainCamera.transform.position.z);
-            Vector3 smoothedPosition = Vector3.Lerp(mainCamera.transform.position, desiredPosition, smoothSpeed);
-            mainCamera.transform.position = smoothedPosition;
-        }
+        Vector3 desiredPosition = new Vector3(Mathf.Clamp(target.transform.position.x, minXPosition, maxXPosition), Mathf.Clamp(target.transform.position.y, minYPosition, maxYPosition), mainCamera.transform.position.z);
+        mainCamera.transform.position = desiredPosition;
+
+        Vector3 desiredPosition2 = new Vector3(Mathf.Clamp(target2.transform.position.x, minXPosition, maxXPosition), Mathf.Clamp(target2.transform.position.y, minYPosition, maxYPosition), mainCamera2.transform.position.z);
+        mainCamera2.transform.position = desiredPosition2;
     }
 }

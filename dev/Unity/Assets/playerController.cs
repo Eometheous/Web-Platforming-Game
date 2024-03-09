@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static pointerController;
 
 public class playerController : MonoBehaviour
 {
@@ -25,10 +26,24 @@ public class playerController : MonoBehaviour
     public float verticalRatio = 750.0f;
     public float horizontalRatio = 500.0f;
 
+    public enum curActivePowerUp
+    {
+        none,
+        push
+    }
+    public curActivePowerUp activePowerUp;
+    public float nextActive;
+    public float activeCoolDown;
+    public float dashMult;
+    public float timeMinusTillNext;
+    //public bool isActiveCoolDown = false;
+
     void Start() {
         rb = GetComponent<Rigidbody2D>();
-        verticalRatio = 750.0f;
-        horizontalRatio = 500.0f;
+        verticalRatio = 75.0f;
+        horizontalRatio = 50.0f;
+        activeCoolDown = 2.0f;
+        dashMult = 25.0f;
     }
 
     // Update is called once per frame
@@ -51,21 +66,40 @@ public class playerController : MonoBehaviour
                 verticalInput *= -1;
         }
 
-        Vector2 movement = new Vector2(horizontalInput * forceMultiplier * horizontalRatio, verticalInput * forceMultiplier * verticalRatio);
-        
         if (touchingGround)
         {
-            rb.AddForce(movement * Time.deltaTime);
+            rb.velocity = new Vector2(rb.velocity.x + horizontalInput * forceMultiplier * horizontalRatio * Time.deltaTime,
+                                        rb.velocity.y + verticalInput * forceMultiplier * verticalRatio * Time.deltaTime);
         }
         else
         {
             if ((rb.velocity.x < 2f && horizontalInput < 0)|| (rb.velocity.x > -2f && horizontalInput > 0))
-                rb.AddForce(movement * slowFactor * slowFactor * Time.deltaTime);
-            else if ((rb.velocity.x < 2f && horizontalInput > 0) || (rb.velocity.x > -2f && horizontalInput < 0)) 
-                rb.AddForce(movement * slowFactor * slowFactor * slowFactor * Time.deltaTime);
+            {
+                rb.velocity = new Vector2(rb.velocity.x + horizontalInput * forceMultiplier * horizontalRatio * slowFactor * slowFactor * Time.deltaTime,
+                                          rb.velocity.y + verticalInput * forceMultiplier * verticalRatio * slowFactor * slowFactor * Time.deltaTime);
+            }
+            else if ((rb.velocity.x < 2f && horizontalInput > 0) || (rb.velocity.x > -2f && horizontalInput < 0))
+            {
+                rb.velocity = new Vector2(rb.velocity.x + horizontalInput * forceMultiplier * horizontalRatio * slowFactor * slowFactor * slowFactor * Time.deltaTime,
+                                          rb.velocity.y + verticalInput * forceMultiplier * verticalRatio * slowFactor * slowFactor * slowFactor * Time.deltaTime);
+            }
+                
         }
 
-        rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxHorizontalVelocity, maxHorizontalVelocity), rb.velocity.y);
+        rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxHorizontalVelocity, maxHorizontalVelocity), Mathf.Clamp(rb.velocity.y, -maxVerticalVelocity, maxVerticalVelocity));
+
+        timeMinusTillNext = Time.time - nextActive;
+        if (activePowerUp == curActivePowerUp.none && Input.GetKey(actionKey) && Time.time > nextActive)
+        {
+            nextActive = Time.time + activeCoolDown;
+
+            float originalG = rb.gravityScale;
+            rb.gravityScale = 0;
+            rb.velocity = new Vector2(rb.velocity.x + horizontalInput * transform.localScale.x * forceMultiplier * horizontalRatio * dashMult * Time.deltaTime, rb.velocity.y);
+            rb.gravityScale = originalG;
+
+            Debug.Log("Active Used");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
