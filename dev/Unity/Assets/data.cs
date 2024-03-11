@@ -19,6 +19,24 @@ public class data : MonoBehaviour
     public List<GameObject> faceList;
     public List<GameObject> colorList;
 
+    public enum powerUpType
+    {
+        reverseGravity,
+        reverseKeys,
+        push
+    }
+
+    public enum curActivePowerUp
+    {
+        none,
+        push
+    }
+    public enum playerNum
+    {
+        player1,
+        player2
+    }
+
     public void initList()
     {
         faceList = new List<GameObject> { face1, face2, face3 };
