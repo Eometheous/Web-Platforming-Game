@@ -346,7 +346,7 @@ MonoBehaviour:
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
-  m_FillClockwise: 0
+  m_FillClockwise: 1
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
@@ -2567,7 +2567,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1856470518}
   - component: {fileID: 1856470517}
-  - component: {fileID: 1856470519}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2594,7 +2593,7 @@ MonoBehaviour:
   maxVerticalVelocity: 10
   maxHorizontalVelocity: 5
   slowFactor: 0
-  data: {fileID: 1856470519}
+  data: {fileID: 6116794119564027516, guid: f7f882685f2aba34aa5ab6631b653966, type: 3}
   p1Icon: {fileID: 352557697}
   p1Heart1: {fileID: 709918412}
   p1Heart2: {fileID: 1535586781}
@@ -2618,30 +2617,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1856470519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1856470516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7028beb3b76b94e45864b98efae65b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  face1: {fileID: 8688208573850650992, guid: bae40289098f41b4a88d0c9ebdb8802b, type: 3}
-  face2: {fileID: 5877217286367322775, guid: 7c7d87b30d99d0b4e85927114faaeb9a, type: 3}
-  face3: {fileID: 3700054673794006774, guid: 10b00b7c25bfc9b4ebfe9896d2446871, type: 3}
-  color1: {fileID: 9159178337381235022, guid: cf9c84f131b21d6409e7e22f52bc13e1, type: 3}
-  color2: {fileID: 890031134080229238, guid: 7f12d327d5d48334595c986453a1feb4, type: 3}
-  color3: {fileID: 6905887467266290708, guid: f09fb183e37c1a647a5ec9cadd63ce69, type: 3}
-  color4: {fileID: 4025565940433062088, guid: 28dbde10e28bdee43b39d784a519cfbe, type: 3}
-  color5: {fileID: 2041848084284656683, guid: c7b38234a927d3848b947ad97df818d4, type: 3}
-  color6: {fileID: 5205952616807429894, guid: decc8b992d5552f44b98a30ff6dbf675, type: 3}
-  color7: {fileID: 5602890540962070908, guid: 7806ba80bffd6ec4e92a70e76b7b30eb, type: 3}
-  faceList: []
-  colorList: []
 --- !u!4 &1867171324 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6655332029323877777, guid: 1a77ba384606ab941a581e2ea61fdc5d, type: 3}

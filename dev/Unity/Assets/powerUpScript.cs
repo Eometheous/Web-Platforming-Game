@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
 using UnityEngine;
 
 public class powerUpScript : MonoBehaviour
@@ -14,13 +10,8 @@ public class powerUpScript : MonoBehaviour
     private bool startTimer;
     private bool initEffect;
 
-    public enum powerUpType
-    {
-        reverseGravity,
-        reverseKeys,
-        push
-    }
-    public powerUpType Type;
+    public data data;
+    public data.powerUpType Type;
 
     private playerController playerAffected;
     public playerController player1;
@@ -39,10 +30,10 @@ public class powerUpScript : MonoBehaviour
         {
             switch (Type)
             {
-                case powerUpType.reverseGravity:
+                case data.powerUpType.reverseGravity:
                     reverseGravity();
                     break;
-                case powerUpType.reverseKeys:
+                case data.powerUpType.reverseKeys:
                     reverseKeys();
                     break;
             }
@@ -55,10 +46,10 @@ public class powerUpScript : MonoBehaviour
             {
                 switch (Type)
                 {
-                    case powerUpType.reverseGravity:
+                    case data.powerUpType.reverseGravity:
                         reverseGravity();
                         break;
-                    case powerUpType.reverseKeys:
+                    case data.powerUpType.reverseKeys:
                         reverseKeys();
                         break;
                 }
@@ -80,7 +71,7 @@ public class powerUpScript : MonoBehaviour
         {
             switch (Type)
             {
-                case powerUpType.push:
+                case data.powerUpType.push:
                     push();
                     break;
             }
@@ -123,8 +114,8 @@ public class powerUpScript : MonoBehaviour
         bool isCurPlayerAffected= false;
         switch (Type)
         {
-            case powerUpType.reverseGravity:
-            case powerUpType.reverseKeys:
+            case data.powerUpType.reverseGravity:
+            case data.powerUpType.reverseKeys:
                 isCurPlayerAffected = true;
                 break;
         }
@@ -136,8 +127,8 @@ public class powerUpScript : MonoBehaviour
         bool passive = false;
         switch (Type)
         {
-            case powerUpType.reverseGravity:
-            case powerUpType.reverseKeys:
+            case data.powerUpType.reverseGravity:
+            case data.powerUpType.reverseKeys:
                 passive = true;
                 break;
         }

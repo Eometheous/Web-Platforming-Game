@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +13,6 @@ public class iconCoolDown : MonoBehaviour
 
     void Update()
     {
-        //coolDownImg.fillAmount = player.activeCoolDown + player.timeMinusTillNext;
         coolDownImg.fillAmount = player.activeCoolDown + (Time.time - player.nextActive - 1.0f);
     }
 }

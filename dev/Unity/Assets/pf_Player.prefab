@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5657943845775595461}
   - component: {fileID: 239361937684759536}
   m_Layer: 0
-  m_Name: Player
+  m_Name: pf_Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,6 +177,21 @@ MonoBehaviour:
   maxVerticalVelocity: 0
   maxHorizontalVelocity: 0
   slowFactor: 0.5
+  upKey: 119
+  downKey: 115
+  leftKey: 97
+  rightKey: 100
+  actionKey: 32
+  reverseJump: 0
+  reverseKeys: 0
+  verticalRatio: 750
+  horizontalRatio: 500
+  data: {fileID: 6116794119564027516, guid: f7f882685f2aba34aa5ab6631b653966, type: 3}
+  activePowerUp: 0
+  nextActive: 0
+  activeCoolDown: 0
+  dashMult: 0
+  timeMinusTillNext: 0
 --- !u!58 &239361937684759536
 CircleCollider2D:
   m_ObjectHideFlags: 0

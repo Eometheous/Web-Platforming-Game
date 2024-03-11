@@ -3,12 +3,8 @@ using UnityEngine;
 
 public class pointerController : MonoBehaviour
 {
-    public enum playerNum
-    {
-        player1,
-        player2
-    }
-    public playerNum player;
+    public data data;
+    public data.playerNum player;
 
     public KeyCode upKey;
     public KeyCode downKey;
@@ -29,14 +25,14 @@ public class pointerController : MonoBehaviour
     {
         switch (player)
         {
-            case playerNum.player1:
+            case data.playerNum.player1:
                 upKey = KeyCode.W;
                 downKey = KeyCode.S;
                 leftKey = KeyCode.A;
                 rightKey = KeyCode.D;
                 actionKey = KeyCode.Space;
                 break;
-            case playerNum.player2:
+            case data.playerNum.player2:
                 upKey = KeyCode.UpArrow;
                 downKey = KeyCode.DownArrow;
                 leftKey = KeyCode.LeftArrow;
@@ -80,10 +76,10 @@ public class pointerController : MonoBehaviour
         int playerInt = 0;
         switch (player)
         {
-            case playerNum.player1:
+            case data.playerNum.player1:
                 playerInt = 1;
                 break;
-            case playerNum.player2:
+            case data.playerNum.player2:
                 playerInt = 2;
                 break;
         }

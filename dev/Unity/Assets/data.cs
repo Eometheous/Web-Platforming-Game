@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class data : MonoBehaviour
 {
@@ -18,6 +19,11 @@ public class data : MonoBehaviour
 
     public List<GameObject> faceList;
     public List<GameObject> colorList;
+
+    public string startGame = "Customize Players";
+    public string tutorial = "Tutorial";
+    public string settings = "Settings";
+    public string title = "Title";
 
     public enum powerUpType
     {
@@ -41,5 +47,25 @@ public class data : MonoBehaviour
     {
         faceList = new List<GameObject> { face1, face2, face3 };
         colorList = new List<GameObject> { color1, color2, color3, color4, color5, color6, color7 };
+    }
+
+    public void navStartGame()
+    {
+        SceneManager.LoadScene(startGame);
+    }
+
+    public void navTutorial()
+    {
+        SceneManager.LoadScene(tutorial);
+    }
+
+    public void navSettings()
+    {
+        SceneManager.LoadScene(settings);
+    }
+
+    public void navTitle()
+    {
+        SceneManager.LoadScene(title);
     }
 }

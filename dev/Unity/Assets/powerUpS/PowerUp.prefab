@@ -136,6 +136,7 @@ MonoBehaviour:
   effectTime: 10
   rangeRadius: 10
   forceMultiplier: 5
+  data: {fileID: 6116794119564027516, guid: f7f882685f2aba34aa5ab6631b653966, type: 3}
   Type: 0
   player1: {fileID: 0}
   player2: {fileID: 0}

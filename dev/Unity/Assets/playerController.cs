@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static pointerController;
 
 public class playerController : MonoBehaviour
 {
@@ -26,12 +23,8 @@ public class playerController : MonoBehaviour
     public float verticalRatio = 750.0f;
     public float horizontalRatio = 500.0f;
 
-    public enum curActivePowerUp
-    {
-        none,
-        push
-    }
-    public curActivePowerUp activePowerUp;
+    public data data;
+    public data.curActivePowerUp activePowerUp;
     public float nextActive;
     public float activeCoolDown;
     public float dashMult;
@@ -89,7 +82,7 @@ public class playerController : MonoBehaviour
         rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxHorizontalVelocity, maxHorizontalVelocity), Mathf.Clamp(rb.velocity.y, -maxVerticalVelocity, maxVerticalVelocity));
 
         timeMinusTillNext = Time.time - nextActive;
-        if (activePowerUp == curActivePowerUp.none && Input.GetKey(actionKey) && Time.time > nextActive)
+        if (activePowerUp == data.curActivePowerUp.none && Input.GetKey(actionKey) && Time.time > nextActive)
         {
             nextActive = Time.time + activeCoolDown;
 
