@@ -1023,8 +1023,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: titleNavScript, Assembly-CSharp
+      - m_Target: {fileID: 6116794119564027516, guid: f7f882685f2aba34aa5ab6631b653966, type: 3}
+        m_TargetAssemblyTypeName: data, Assembly-CSharp
         m_MethodName: navTitle
         m_Mode: 1
         m_Arguments:
@@ -1341,18 +1341,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b08ef02b728d0c749b7e4c5a6306a9a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 6116794119564027516, guid: f7f882685f2aba34aa5ab6631b653966, type: 3}
   player: 0
-  upKey: 0
-  downKey: 0
-  leftKey: 0
-  rightKey: 0
-  actionKey: 0
-  moveSpeed: 275
-  hoverOn: {fileID: 0}
+  data: {fileID: 6116794119564027516, guid: f7f882685f2aba34aa5ab6631b653966, type: 3}
+  customizeManager: {fileID: 2064701106}
   readyBar: {fileID: 1353823584}
   readyCap: {fileID: 571569691}
-  customizeManager: {fileID: 2064701106}
 --- !u!58 &595233237
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3269,18 +3262,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b08ef02b728d0c749b7e4c5a6306a9a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 6116794119564027516, guid: f7f882685f2aba34aa5ab6631b653966, type: 3}
   player: 1
-  upKey: 0
-  downKey: 0
-  leftKey: 0
-  rightKey: 0
-  actionKey: 0
-  moveSpeed: 275
-  hoverOn: {fileID: 0}
+  data: {fileID: 6116794119564027516, guid: f7f882685f2aba34aa5ab6631b653966, type: 3}
+  customizeManager: {fileID: 2064701106}
   readyBar: {fileID: 1385399536}
   readyCap: {fileID: 1665055829}
-  customizeManager: {fileID: 2064701106}
 --- !u!50 &1662810032
 Rigidbody2D:
   serializedVersion: 4
@@ -3916,16 +3902,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f77f2ccfc24eede41b90c8a440efefaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSceneName: 
+  data: {fileID: 6116794119564027516, guid: f7f882685f2aba34aa5ab6631b653966, type: 3}
   pointer1: {fileID: 595233235}
   pointer2: {fileID: 1662810031}
   readyBar1: {fileID: 1353823584}
   readyBar2: {fileID: 1385399536}
   player1Preview: {fileID: 1682425972}
   player2Preview: {fileID: 1937832047}
-  faceList: []
-  colorList: []
-  data: {fileID: 6116794119564027516, guid: f7f882685f2aba34aa5ab6631b653966, type: 3}
 --- !u!4 &2064701107
 Transform:
   m_ObjectHideFlags: 0

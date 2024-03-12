@@ -3,8 +3,8 @@ using UnityEngine.UI;
 
 public class iconCoolDown : MonoBehaviour
 {
-    public playerController player;
-    public Image coolDownImg;
+    [SerializeField] private playerController player;
+    [SerializeField] private Image coolDownImg;
 
     void Start()
     {

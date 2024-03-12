@@ -2,26 +2,34 @@ using UnityEngine;
 
 public class powerUpScript : MonoBehaviour
 {
-    public float effectTime = 60.0f;
-    public float rangeRadius = 10.0f;
-    public float forceMultiplier = 2500.0f;
-    private float ActiveCooldown = 2.5f;
     private float lastActiveTime;
     private bool startTimer;
     private bool initEffect;
-
-    public data data;
-    public data.powerUpType Type;
-
     private playerController playerAffected;
-    public playerController player1;
-    public playerController player2;
+
+    [Header("Must Init")]
+    [SerializeField] private data data;
+    [SerializeField] private playerController player1;
+    [SerializeField] private playerController player2;
+    [Space(15)]
+
+    [Header("Power Up")]
+    public data.powerUpType Type;
+    public float activeCoolDown;
+    public float effectTime;
+    public float rangeRadius;
+    public float forceMultiplier;
 
     void Start()
     {
+        activeCoolDown = data.activeCoolDown;
+        effectTime = data.puEffectTime;
+        rangeRadius = data.puRangeRadius;
+        forceMultiplier = data.puForceMultiplier;
+
         initEffect = false;
         startTimer = false;
-        lastActiveTime = -ActiveCooldown;
+        lastActiveTime = -activeCoolDown;
     }
 
     void Update()
@@ -57,7 +65,10 @@ public class powerUpScript : MonoBehaviour
             }
             if (!isPassive())
             {
-                if (Input.GetKey(playerAffected.actionKey))
+                KeyCode actionKey = data.p1ActionKey;
+                if (playerAffected.player == data.playerNum.player2)
+                    actionKey = data.p2ActionKey;
+                if (Input.GetKey(actionKey))
                 {
                     TryActivate();
                 }
@@ -67,7 +78,7 @@ public class powerUpScript : MonoBehaviour
 
     private void TryActivate()
     {
-        if (Time.time - lastActiveTime >= ActiveCooldown)
+        if (Time.time - lastActiveTime >= activeCoolDown)
         {
             switch (Type)
             {

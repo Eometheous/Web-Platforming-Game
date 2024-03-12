@@ -1,25 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class cameraMovement : MonoBehaviour
 {
-    [SerializeField] private Camera mainCamera;
-    [SerializeField] private GameObject target;
-    [SerializeField] private Camera mainCamera2;
-    [SerializeField] private GameObject target2;
-    public float smoothSpeed = 10.0f;
-    float minYPosition = -25.0f;
-    float maxYPosition = 0.0f;
-    float minXPosition = -8.9f;
-    float maxXPosition = 8.9f;
+    [SerializeField] private data data;
+    [SerializeField] private Camera cam1;
+    [SerializeField] private GameObject player1;
+    [SerializeField] private Camera cam2;
+    [SerializeField] private GameObject player2;
 
     private void Update()
     {
-        Vector3 desiredPosition = new Vector3(Mathf.Clamp(target.transform.position.x, minXPosition, maxXPosition), Mathf.Clamp(target.transform.position.y, minYPosition, maxYPosition), mainCamera.transform.position.z);
-        mainCamera.transform.position = desiredPosition;
+        Vector3 desiredPosition = new Vector3(Mathf.Clamp(player1.transform.position.x, data.camMinXPosition, data.camMaxXPosition), Mathf.Clamp(player1.transform.position.y, data.camMinYPosition, data.camMaxYPosition), cam1.transform.position.z);
+        cam1.transform.position = desiredPosition;
 
-        Vector3 desiredPosition2 = new Vector3(Mathf.Clamp(target2.transform.position.x, minXPosition, maxXPosition), Mathf.Clamp(target2.transform.position.y, minYPosition, maxYPosition), mainCamera2.transform.position.z);
-        mainCamera2.transform.position = desiredPosition2;
+        Vector3 desiredPosition2 = new Vector3(Mathf.Clamp(player2.transform.position.x, data.camMinXPosition, data.camMaxXPosition), Mathf.Clamp(player2.transform.position.y, data.camMinYPosition, data.camMaxYPosition), cam2.transform.position.z);
+        cam2.transform.position = desiredPosition2;
     }
 }

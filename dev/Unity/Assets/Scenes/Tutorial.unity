@@ -422,11 +422,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02748b9ec2e071b4395368519ed71409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 1050562595}
-  target: {fileID: 803062536}
-  mainCamera2: {fileID: 1974266781}
-  target2: {fileID: 1110191365}
-  smoothSpeed: 0
+  data: {fileID: 6116794119564027516, guid: f7f882685f2aba34aa5ab6631b653966, type: 3}
+  cam1: {fileID: 1050562595}
+  player1: {fileID: 803062536}
+  cam2: {fileID: 1974266781}
+  player2: {fileID: 1110191365}
 --- !u!1 &363516450
 GameObject:
   m_ObjectHideFlags: 0
@@ -4492,6 +4492,10 @@ PrefabInstance:
     - target: {fileID: 5657943845775595461, guid: 7ace78d1f139be944892daa867356b86, type: 3}
       propertyPath: upKey
       value: 273
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657943845775595461, guid: 7ace78d1f139be944892daa867356b86, type: 3}
+      propertyPath: player
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5657943845775595461, guid: 7ace78d1f139be944892daa867356b86, type: 3}
       propertyPath: downKey

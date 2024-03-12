@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 4313778667469883376}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7524585, y: -0.87833136, z: -13.149499}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,19 +44,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7028beb3b76b94e45864b98efae65b2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  face1: {fileID: 8688208573850650992, guid: bae40289098f41b4a88d0c9ebdb8802b, type: 3}
-  face2: {fileID: 5877217286367322775, guid: 7c7d87b30d99d0b4e85927114faaeb9a, type: 3}
-  face3: {fileID: 3700054673794006774, guid: 10b00b7c25bfc9b4ebfe9896d2446871, type: 3}
-  color1: {fileID: 9159178337381235022, guid: cf9c84f131b21d6409e7e22f52bc13e1, type: 3}
-  color2: {fileID: 890031134080229238, guid: 7f12d327d5d48334595c986453a1feb4, type: 3}
-  color3: {fileID: 6905887467266290708, guid: f09fb183e37c1a647a5ec9cadd63ce69, type: 3}
-  color4: {fileID: 4025565940433062088, guid: 28dbde10e28bdee43b39d784a519cfbe, type: 3}
-  color5: {fileID: 2041848084284656683, guid: c7b38234a927d3848b947ad97df818d4, type: 3}
-  color6: {fileID: 5205952616807429894, guid: decc8b992d5552f44b98a30ff6dbf675, type: 3}
-  color7: {fileID: 5602890540962070908, guid: 7806ba80bffd6ec4e92a70e76b7b30eb, type: 3}
-  faceList: []
-  colorList: []
+  faceList:
+  - {fileID: 8688208573850650992, guid: bae40289098f41b4a88d0c9ebdb8802b, type: 3}
+  - {fileID: 5877217286367322775, guid: 7c7d87b30d99d0b4e85927114faaeb9a, type: 3}
+  - {fileID: 3700054673794006774, guid: 10b00b7c25bfc9b4ebfe9896d2446871, type: 3}
+  colorList:
+  - {fileID: 9159178337381235022, guid: cf9c84f131b21d6409e7e22f52bc13e1, type: 3}
+  - {fileID: 890031134080229238, guid: 7f12d327d5d48334595c986453a1feb4, type: 3}
+  - {fileID: 6905887467266290708, guid: f09fb183e37c1a647a5ec9cadd63ce69, type: 3}
+  - {fileID: 4025565940433062088, guid: 28dbde10e28bdee43b39d784a519cfbe, type: 3}
+  - {fileID: 2041848084284656683, guid: c7b38234a927d3848b947ad97df818d4, type: 3}
+  - {fileID: 5205952616807429894, guid: decc8b992d5552f44b98a30ff6dbf675, type: 3}
+  - {fileID: 5602890540962070908, guid: 7806ba80bffd6ec4e92a70e76b7b30eb, type: 3}
   startGame: Customize Players
   tutorial: Tutorial
   settings: Settings
   title: Title
+  basicLevel: Basic Level
+  p1ColorNum: p1ColorNum
+  p1FaceNum: p1FaceNum
+  p2ColorNum: p2ColorNum
+  p2FaceNum: p2FaceNum
+  camSmoothSpeed: 10
+  camMinYPosition: -25
+  camMaxYPosition: 0
+  camMinXPosition: -8.9
+  camMaxXPosition: 8.9
+  verticalForceMultiplier: 10
+  horizontalForceMultiplier: 5
+  maxVerticalVelocity: 5
+  maxHorizontalVelocity: 5
+  slowFactor: 0.5
+  p1UpKey: 119
+  p1DownKey: 115
+  p1LeftKey: 97
+  p1RightKey: 100
+  p1ActionKey: 32
+  p2UpKey: 273
+  p2DownKey: 274
+  p2LeftKey: 276
+  p2RightKey: 275
+  p2ActionKey: 13
+  mouseMoveSpeed: 250
