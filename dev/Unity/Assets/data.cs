@@ -37,11 +37,11 @@ public class data : MonoBehaviour
 
 
     [Header("Players Movement Speed")]
-    public float forceMultiplier = 20f;
-    public float verticalForceMultiplier = 6f;
-    public float maxVerticalVelocity = 5f;
-    public float maxHorizontalVelocity = 5f;
-    public float slowFactor = 0.5f;
+    public float forceMultiplier = 10.0f;
+    public float verticalForceMultiplier = 2.0f;
+    public float maxVerticalVelocity = 20.0f;
+    public float maxHorizontalVelocity = 12.5f;
+    public float slowFactor = 0.4f;
     public float verticalRatio = 75.0f;
     public float horizontalRatio = 50.0f;
     public float dashMult = 25.0f;

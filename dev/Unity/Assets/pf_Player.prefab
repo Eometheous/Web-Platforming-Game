@@ -172,26 +172,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4326439c7c226c7468957aad41994fe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  verticalForceMultiplier: 0
+  data: {fileID: 6116794119564027516, guid: f7f882685f2aba34aa5ab6631b653966, type: 3}
+  player: 0
   forceMultiplier: 20
+  verticalForceMultiplier: 0
   maxVerticalVelocity: 0
   maxHorizontalVelocity: 0
   slowFactor: 0.5
-  upKey: 119
-  downKey: 115
-  leftKey: 97
-  rightKey: 100
-  actionKey: 32
-  reverseJump: 0
-  reverseKeys: 0
   verticalRatio: 750
   horizontalRatio: 500
-  data: {fileID: 6116794119564027516, guid: f7f882685f2aba34aa5ab6631b653966, type: 3}
+  reverseJump: 0
+  reverseKeys: 0
   activePowerUp: 0
-  nextActive: 0
   activeCoolDown: 0
+  nextActive: 0
   dashMult: 0
-  timeMinusTillNext: 0
 --- !u!58 &239361937684759536
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -226,4 +221,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.55
+  m_Radius: 0.75

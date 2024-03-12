@@ -70,11 +70,15 @@ MonoBehaviour:
   camMaxYPosition: 0
   camMinXPosition: -8.9
   camMaxXPosition: 8.9
-  verticalForceMultiplier: 10
-  horizontalForceMultiplier: 5
-  maxVerticalVelocity: 5
-  maxHorizontalVelocity: 5
-  slowFactor: 0.5
+  forceMultiplier: 2
+  verticalForceMultiplier: 2
+  maxVerticalVelocity: 25
+  maxHorizontalVelocity: 25
+  slowFactor: 0.6
+  verticalRatio: 75
+  horizontalRatio: 50
+  dashMult: 50
+  activeCoolDown: 2
   p1UpKey: 119
   p1DownKey: 115
   p1LeftKey: 97
@@ -86,3 +90,6 @@ MonoBehaviour:
   p2RightKey: 275
   p2ActionKey: 13
   mouseMoveSpeed: 250
+  puEffectTime: 60
+  puRangeRadius: 10
+  puForceMultiplier: 2500
