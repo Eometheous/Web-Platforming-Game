@@ -14,8 +14,9 @@
 	- Download VS Code and open the project inside the previously selected folder
 	- cd into dev/JALWebsite
 	- Instal things like Flask and Python if you don’t have it on your machine
-	- cd into /server and run the server by typing 
-		- python app.py
+ 	- pip install Flask-Cors 	
+	- cd into /server and run the server by typing
+ 		- python app.py
 	- cd into /client and run
 		- Install node.js
 		- npm install (install npm on machine)
