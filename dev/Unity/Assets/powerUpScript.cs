@@ -1,36 +1,35 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
 using UnityEngine;
 
 public class powerUpScript : MonoBehaviour
 {
-    public float effectTime = 60.0f;
-    public float rangeRadius = 10.0f;
-    public float forceMultiplier = 2500.0f;
-    private float ActiveCooldown = 2.5f;
     private float lastActiveTime;
     private bool startTimer;
     private bool initEffect;
-
-    public enum powerUpType
-    {
-        reverseGravity,
-        reverseKeys,
-        push
-    }
-    public powerUpType Type;
-
     private playerController playerAffected;
-    public playerController player1;
-    public playerController player2;
+
+    [Header("Must Init")]
+    [SerializeField] private data data;
+    [SerializeField] private playerController player1;
+    [SerializeField] private playerController player2;
+    [Space(15)]
+
+    [Header("Power Up")]
+    public data.powerUpType Type;
+    public float activeCoolDown;
+    public float effectTime;
+    public float rangeRadius;
+    public float forceMultiplier;
 
     void Start()
     {
+        activeCoolDown = data.activeCoolDown;
+        effectTime = data.puEffectTime;
+        rangeRadius = data.puRangeRadius;
+        forceMultiplier = data.puForceMultiplier;
+
         initEffect = false;
         startTimer = false;
-        lastActiveTime = -ActiveCooldown;
+        lastActiveTime = -activeCoolDown;
     }
 
     void Update()
@@ -39,10 +38,10 @@ public class powerUpScript : MonoBehaviour
         {
             switch (Type)
             {
-                case powerUpType.reverseGravity:
+                case data.powerUpType.reverseGravity:
                     reverseGravity();
                     break;
-                case powerUpType.reverseKeys:
+                case data.powerUpType.reverseKeys:
                     reverseKeys();
                     break;
             }
@@ -55,10 +54,10 @@ public class powerUpScript : MonoBehaviour
             {
                 switch (Type)
                 {
-                    case powerUpType.reverseGravity:
+                    case data.powerUpType.reverseGravity:
                         reverseGravity();
                         break;
-                    case powerUpType.reverseKeys:
+                    case data.powerUpType.reverseKeys:
                         reverseKeys();
                         break;
                 }
@@ -66,7 +65,10 @@ public class powerUpScript : MonoBehaviour
             }
             if (!isPassive())
             {
-                if (Input.GetKey(playerAffected.actionKey))
+                KeyCode actionKey = data.p1ActionKey;
+                if (playerAffected.player == data.playerNum.player2)
+                    actionKey = data.p2ActionKey;
+                if (Input.GetKey(actionKey))
                 {
                     TryActivate();
                 }
@@ -76,11 +78,11 @@ public class powerUpScript : MonoBehaviour
 
     private void TryActivate()
     {
-        if (Time.time - lastActiveTime >= ActiveCooldown)
+        if (Time.time - lastActiveTime >= activeCoolDown)
         {
             switch (Type)
             {
-                case powerUpType.push:
+                case data.powerUpType.push:
                     push();
                     break;
             }
@@ -114,7 +116,7 @@ public class powerUpScript : MonoBehaviour
             float yVec = playerPushed.transform.position.y - playerAffected.transform.position.y;
             Vector2 movement = new Vector2(xVec, yVec);
             movement.Normalize();
-            playerPushed.GetComponent<Rigidbody2D>().AddForce(movement * forceMultiplier * distanceFactor);
+            playerPushed.GetComponent<Rigidbody2D>().AddForce(movement * forceMultiplier * distanceFactor * Time.deltaTime);
         }
     }
 
@@ -123,8 +125,8 @@ public class powerUpScript : MonoBehaviour
         bool isCurPlayerAffected= false;
         switch (Type)
         {
-            case powerUpType.reverseGravity:
-            case powerUpType.reverseKeys:
+            case data.powerUpType.reverseGravity:
+            case data.powerUpType.reverseKeys:
                 isCurPlayerAffected = true;
                 break;
         }
@@ -136,8 +138,8 @@ public class powerUpScript : MonoBehaviour
         bool passive = false;
         switch (Type)
         {
-            case powerUpType.reverseGravity:
-            case powerUpType.reverseKeys:
+            case data.powerUpType.reverseGravity:
+            case data.powerUpType.reverseKeys:
                 passive = true;
                 break;
         }

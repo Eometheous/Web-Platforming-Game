@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
 using UnityEngine;
 
 public class platformLiner : MonoBehaviour
 {
-    public GameObject endcap1;
-    public GameObject endcap2;
+    [SerializeField] private GameObject endcap1;
+    [SerializeField] private GameObject endcap2;
     private EdgeCollider2D edgeCollider;
 
     // Start is called before the first frame update

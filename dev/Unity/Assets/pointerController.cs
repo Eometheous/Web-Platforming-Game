@@ -3,45 +3,41 @@ using UnityEngine;
 
 public class pointerController : MonoBehaviour
 {
-    public enum playerNum
-    {
-        player1,
-        player2
-    }
-    public playerNum player;
-
-    public KeyCode upKey;
-    public KeyCode downKey;
-    public KeyCode leftKey;
-    public KeyCode rightKey;
-    public KeyCode actionKey;
-
-    public float moveSpeed = 250.0f;
-    public Collider2D hoverOn;
-
-    public GameObject readyBar;
-    public GameObject readyCap;
+    private KeyCode upKey;
+    private KeyCode downKey;
+    private KeyCode leftKey;
+    private KeyCode rightKey;
+    private KeyCode actionKey;
+    private Collider2D hoverOn;
     private bool canChangeColor = true;
 
-    public customizeManager customizeManager;
+    [Header("Scripts")]
+    public data.playerNum player;
+    [SerializeField] private data data;
+    [SerializeField] private customizeManager customizeManager;
+    [Space(15)]
+
+    [Header("Ready Bar")]
+    [SerializeField] private GameObject readyBar;
+    [SerializeField] private GameObject readyCap;
 
     private void Start()
     {
         switch (player)
         {
-            case playerNum.player1:
-                upKey = KeyCode.W;
-                downKey = KeyCode.S;
-                leftKey = KeyCode.A;
-                rightKey = KeyCode.D;
-                actionKey = KeyCode.Space;
+            case data.playerNum.player1:
+                upKey = data.p1UpKey;
+                downKey = data.p1DownKey;
+                leftKey = data.p1LeftKey;
+                rightKey = data.p1RightKey;
+                actionKey = data.p1ActionKey;
                 break;
-            case playerNum.player2:
-                upKey = KeyCode.UpArrow;
-                downKey = KeyCode.DownArrow;
-                leftKey = KeyCode.LeftArrow;
-                rightKey = KeyCode.RightArrow;
-                actionKey = KeyCode.Return;
+            case data.playerNum.player2:
+                upKey = data.p2UpKey;
+                downKey = data.p2DownKey;
+                leftKey = data.p2LeftKey;
+                rightKey = data.p2RightKey;
+                actionKey = data.p2ActionKey;
                 break;
         }
     }
@@ -72,65 +68,30 @@ public class pointerController : MonoBehaviour
         }
 
         Vector2 movement = new Vector2(horizontalInput, verticalInput);
-        GetComponent<Rigidbody2D>().AddForce(movement * Time.deltaTime * moveSpeed);
+        GetComponent<Rigidbody2D>().AddForce(movement * Time.deltaTime * data.mouseMoveSpeed);
     }
 
     private void customize()
     {
-        int playerInt = 0;
-        switch (player)
-        {
-            case playerNum.player1:
-                playerInt = 1;
-                break;
-            case playerNum.player2:
-                playerInt = 2;
-                break;
-        }
-        if (hoverOn.gameObject.name == "f1")
-        {
-            customizeManager.changeFace(playerInt, 0);
-        } 
-        else if (hoverOn.gameObject.name == "f2")
-        {
-            customizeManager.changeFace(playerInt, 1);
-        }
-        else if (hoverOn.gameObject.name == "f3")
-        {
-            customizeManager.changeFace(playerInt, 2);
-        }
-        else if (hoverOn.gameObject.name == "cw")
-        {
-            customizeManager.changeColor(playerInt, 0);
-        }
-        else if (hoverOn.gameObject.name == "cr")
-        {
-            customizeManager.changeColor(playerInt, 1);
-        }
-        else if (hoverOn.gameObject.name == "co")
-        {
-            customizeManager.changeColor(playerInt, 2);
-        }
-        else if (hoverOn.gameObject.name == "cy")
-        {
-            customizeManager.changeColor(playerInt, 3);
-        }
-        else if (hoverOn.gameObject.name == "cg")
-        {
-            customizeManager.changeColor(playerInt, 4);
-        }
-        else if (hoverOn.gameObject.name == "cb")
-        {
-            customizeManager.changeColor(playerInt, 5);
-        }
-        else if (hoverOn.gameObject.name == "cp")
-        {
-            customizeManager.changeColor(playerInt, 6);
-        }
-
         if (canChangeColor)
         {
             StartCoroutine(ChangeColorWithDelay());
+        }
+
+        for (int i = 0; i < data.faceList.Count; i ++)
+        {
+            if (hoverOn.gameObject.name == data.faceList[i].gameObject.name)
+            {
+                customizeManager.changeFace(player, i);
+            }
+        }
+
+        for (int i = 0; i < data.colorList.Count; i++)
+        {
+            if (hoverOn.gameObject.name == data.colorList[i].gameObject.name)
+            {
+                customizeManager.changeColor(player, i);
+            }
         }
     }
 

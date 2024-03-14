@@ -500,8 +500,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1641491241}
-        m_TargetAssemblyTypeName: titleNavScript, Assembly-CSharp
+      - m_Target: {fileID: 6116794119564027516, guid: f7f882685f2aba34aa5ab6631b653966, type: 3}
+        m_TargetAssemblyTypeName: data, Assembly-CSharp
         m_MethodName: navSettings
         m_Mode: 1
         m_Arguments:
@@ -633,8 +633,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1641491241}
-        m_TargetAssemblyTypeName: titleNavScript, Assembly-CSharp
+      - m_Target: {fileID: 6116794119564027516, guid: f7f882685f2aba34aa5ab6631b653966, type: 3}
+        m_TargetAssemblyTypeName: data, Assembly-CSharp
         m_MethodName: navStartGame
         m_Mode: 1
         m_Arguments:
@@ -922,50 +922,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1540994041}
   m_CullTransparentMesh: 1
---- !u!1 &1641491240
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1641491242}
-  - component: {fileID: 1641491241}
-  m_Layer: 0
-  m_Name: TitleNavigator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1641491241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641491240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 121019e74eb39fc4ba1e8995b77b85f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1641491242
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641491240}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.055304, y: 0.21785727, z: 50573.254}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1664943654
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,8 +1005,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1641491241}
-        m_TargetAssemblyTypeName: titleNavScript, Assembly-CSharp
+      - m_Target: {fileID: 6116794119564027516, guid: f7f882685f2aba34aa5ab6631b653966, type: 3}
+        m_TargetAssemblyTypeName: data, Assembly-CSharp
         m_MethodName: navTutorial
         m_Mode: 1
         m_Arguments:
@@ -1374,4 +1330,3 @@ SceneRoots:
   - {fileID: 756641222}
   - {fileID: 1530215840}
   - {fileID: 192448784}
-  - {fileID: 1641491242}
