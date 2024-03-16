@@ -11,7 +11,7 @@ stringTest = "howdy dis from backend"
 def getBackendTest():
     return jsonify({'stringTest': stringTest})
 
-@app.route('/')
+@app.route('/loadGame')
 def game():
     return render_template('index.html')
 
