@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Jump And Launch</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -101,9 +100,6 @@
           progressBarFull.style.width = 100 * progress + "%";
               }).then((unityInstance) => {
                 loadingBar.style.display = "none";
-                fullscreenButton.onclick = () => {
-                  unityInstance.SetFullscreen(1);
-                };
               }).catch((message) => {
                 alert(message);
               });
