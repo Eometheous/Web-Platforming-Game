@@ -28,16 +28,14 @@ public class playerControllerFree : MonoBehaviour
 
     [Header("Active PowerUp")]
     public data.curActivePowerUp activePowerUp;
-    public float activeCoolDown;
+    public float activeCoolDown = 1f;
     public float nextActive;
-    public float dashMult;
+    public float dashMult = 70000;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         activePowerUp = data.curActivePowerUp.none;
-        activeCoolDown = data.activeCoolDown;
-        dashMult = data.dashMult;
         updateKeys();
     }
 
@@ -80,10 +78,8 @@ public class playerControllerFree : MonoBehaviour
         {
             nextActive = Time.time + activeCoolDown;
 
-            float originalG = rb.gravityScale;
-            rb.gravityScale = 0;
-            rb.velocity = new Vector2(rb.velocity.x + horizontalInput * transform.localScale.x * forceMultiplier * horizontalRatio * dashMult * Time.deltaTime, rb.velocity.y);
-            rb.gravityScale = originalG;
+            rb.velocity = new Vector2(rb.velocity.x + horizontalInput * transform.localScale.x * forceMultiplier * horizontalRatio * dashMult * Time.deltaTime, 
+                                       rb.velocity.y + verticalInput * transform.localScale.x * forceMultiplier * verticalRatio * dashMult * Time.deltaTime);
         }
     }
 

@@ -65,7 +65,7 @@ public class customizeManager : MonoBehaviour
     {
         if (readyBar1.GetComponent<SpriteRenderer>().color == Color.green && readyBar2.GetComponent<SpriteRenderer>().color == Color.green)
         {
-            data.navBasicLevel();
+            data.navLvlPicker();
         }
     }
 }
