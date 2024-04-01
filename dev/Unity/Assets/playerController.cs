@@ -16,6 +16,7 @@ public class playerController : MonoBehaviour
     [Space(15)]
 
     [Header("Movement")]
+    public bool freeMovement = false;
     public float forceMultiplier = 10.0f;
     public float verticalForceMultiplier = 2.0f;
     public float maxVerticalVelocity = 20.0f;
@@ -37,13 +38,16 @@ public class playerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         activePowerUp = data.curActivePowerUp.none;
         activeCoolDown = data.activeCoolDown;
-        forceMultiplier = data.forceMultiplier;
-        verticalForceMultiplier = data.verticalForceMultiplier;
-        maxVerticalVelocity = data.maxVerticalVelocity;
-        maxHorizontalVelocity = data.maxHorizontalVelocity;
-        slowFactor = data.slowFactor;
-        verticalRatio = data.verticalRatio;
-        horizontalRatio = data.horizontalRatio;
+        if (!freeMovement)
+        {
+            forceMultiplier = data.forceMultiplier;
+            verticalForceMultiplier = data.verticalForceMultiplier;
+            maxVerticalVelocity = data.maxVerticalVelocity;
+            maxHorizontalVelocity = data.maxHorizontalVelocity;
+            slowFactor = data.slowFactor;
+            verticalRatio = data.verticalRatio;
+            horizontalRatio = data.horizontalRatio;
+        }
         dashMult = data.dashMult;
         updateKeys();
     }
@@ -76,7 +80,7 @@ public class playerController : MonoBehaviour
                 verticalInput *= -1f;
         }
 
-        if (touchingGround)
+        if (touchingGround || freeMovement)
         {
             rb.velocity = new Vector2(rb.velocity.x + horizontalInput * forceMultiplier * horizontalRatio * Time.deltaTime,
                                         rb.velocity.y + verticalInput * forceMultiplier * verticalRatio * Time.deltaTime);

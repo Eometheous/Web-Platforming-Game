@@ -18,6 +18,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Customize Players.unity
     guid: 96c022c3b82e98f4c870d6166ad5f1e0
   - enabled: 1
+    path: Assets/Scenes/Pick Level.unity
+    guid: 96b262b29877cca4791c24b011fc1388
+  - enabled: 1
     path: Assets/Scenes/Basic Level.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Pong.unity
+    guid: a3f77df989df4114b809549e6cddc3fb
   m_configObjects: {}
