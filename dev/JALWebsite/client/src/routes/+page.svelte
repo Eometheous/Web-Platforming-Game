@@ -4,7 +4,7 @@
 
 <div class="iframe-container">
     <!-- svelte-ignore a11y-missing-attribute -->
-    <iframe frameborder="0" src="https://itch.io/embed-upload/9952218?color=333333" allowfullscreen="" width="1120" height="690">
+    <iframe frameborder="0" src="https://itch.io/embed-upload/10151611?color=333333" width="1120" height="690">
         <a href="https://byuntaeyeon02.itch.io/jal">Play Jump And Launch on itch.io</a>
     </iframe>
 </div>
