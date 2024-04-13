@@ -836,6 +836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levatatedObject: {fileID: 8003370011668962074}
   levatating: 0
+  upDown: 1
 --- !u!1 &8525518649944546132
 GameObject:
   m_ObjectHideFlags: 0
@@ -1174,6 +1175,10 @@ PrefabInstance:
     - target: {fileID: 2398304193928843194, guid: 5544d6afa1f484a0fbb4b30e28e5badc, type: 3}
       propertyPath: m_Name
       value: trigger1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5790698124073376732, guid: 5544d6afa1f484a0fbb4b30e28e5badc, type: 3}
+      propertyPath: upDown
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5790698124073376732, guid: 5544d6afa1f484a0fbb4b30e28e5badc, type: 3}
       propertyPath: levatatedObject
