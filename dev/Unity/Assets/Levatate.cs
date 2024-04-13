@@ -13,7 +13,7 @@ public class Levatate : MonoBehaviour
     {
         if (levatating) {
             Rigidbody2D rb = levatatedObject.gameObject.GetComponent<Rigidbody2D>();
-            rb.AddForce(Vector2.up * 20);
+            rb.AddForce(Vector2.down * rb.gravityScale * -2);
         }
     }
 
