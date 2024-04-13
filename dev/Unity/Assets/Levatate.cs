@@ -7,14 +7,17 @@ public class Levatate : MonoBehaviour
 {
     public GameObject levatatedObject;
     public bool levatating;
+    public bool upDown;
 
     // Update is called once per frame
     void Update()
     {
+        Rigidbody2D rb = levatatedObject.GetComponent<Rigidbody2D>();
         if (levatating) {
-            Rigidbody2D rb = levatatedObject.gameObject.GetComponent<Rigidbody2D>();
-            rb.AddForce(Vector2.down * rb.gravityScale * -2);
+            if (upDown) rb.AddForce(-2 * rb.gravityScale * Vector2.down);
+            else rb.AddForce(2 * rb.gravityScale * Vector2.right);
         }
+        else if (!upDown) rb.AddForce(rb.gravityScale * Vector2.left);
     }
 
     public void OnTriggerEnter2D(Collider2D collider) {
