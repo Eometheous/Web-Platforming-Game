@@ -13,6 +13,8 @@ public class pongManager : MonoBehaviour
     public TextMeshProUGUI p1ScoreDisplay;
     public TextMeshProUGUI p2ScoreDisplay;
 
+    public int winBy = 5;
+
 
     public ball ball;
     public TrailRenderer ballTrail;
@@ -52,7 +54,7 @@ public class pongManager : MonoBehaviour
             StartCoroutine(Pauser());
         }
 
-        if (p1Score == 10 || p2Score == 10)
+        if (p1Score == winBy || p2Score == winBy)
         {
             data.navLvlPicker();
         }
