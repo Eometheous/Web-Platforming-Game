@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4313778667469883376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1859473754046806597}
+  - component: {fileID: 6116794119564027516}
+  m_Layer: 0
+  m_Name: pf_data CO-OP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1859473754046806597
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4313778667469883376}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6116794119564027516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4313778667469883376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7028beb3b76b94e45864b98efae65b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faceList:
+  - {fileID: 8688208573850650992, guid: bae40289098f41b4a88d0c9ebdb8802b, type: 3}
+  - {fileID: 5877217286367322775, guid: 7c7d87b30d99d0b4e85927114faaeb9a, type: 3}
+  - {fileID: 3700054673794006774, guid: 10b00b7c25bfc9b4ebfe9896d2446871, type: 3}
+  - {fileID: 3230214902987463475, guid: 5d67402d654129547b79295c79727c03, type: 3}
+  - {fileID: 6756265548909503101, guid: ab0afc2cff4c1144580bdbf2599312d3, type: 3}
+  - {fileID: 8002648339560143470, guid: 2173b7360636bc94e8820ef43d717c16, type: 3}
+  - {fileID: 4994524916709017509, guid: 5e188e660233a864fa2ddcd2bb4d7b01, type: 3}
+  - {fileID: 7225857441169594554, guid: 8a2eab549b67dd945a63d12a1e34ec2f, type: 3}
+  - {fileID: 768740976491203049, guid: 5cca13f816dd77343a935358cc98a6ee, type: 3}
+  colorList:
+  - {fileID: 9159178337381235022, guid: cf9c84f131b21d6409e7e22f52bc13e1, type: 3}
+  - {fileID: 890031134080229238, guid: 7f12d327d5d48334595c986453a1feb4, type: 3}
+  - {fileID: 6905887467266290708, guid: f09fb183e37c1a647a5ec9cadd63ce69, type: 3}
+  - {fileID: 4025565940433062088, guid: 28dbde10e28bdee43b39d784a519cfbe, type: 3}
+  - {fileID: 2041848084284656683, guid: c7b38234a927d3848b947ad97df818d4, type: 3}
+  - {fileID: 5205952616807429894, guid: decc8b992d5552f44b98a30ff6dbf675, type: 3}
+  - {fileID: 5602890540962070908, guid: 7806ba80bffd6ec4e92a70e76b7b30eb, type: 3}
+  startGame: Customize Players
+  lvlPicker: Pick Level
+  tutorial: Tutorial
+  settings: Settings
+  title: Title
+  basicLevel: Basic Level
+  pong: Pong
+  p1ColorNum: p1ColorNum
+  p1FaceNum: p1FaceNum
+  p2ColorNum: p2ColorNum
+  p2FaceNum: p2FaceNum
+  camSmoothSpeed: 10
+  camMinYPosition: -25
+  camMaxYPosition: 0
+  camMinXPosition: -8.9
+  camMaxXPosition: 8.9
+  forceMultiplier: 2
+  verticalForceMultiplier: 2
+  maxVerticalVelocity: 15
+  maxHorizontalVelocity: 10
+  slowFactor: 0.6
+  verticalRatio: 40
+  horizontalRatio: 20
+  dashMult: 50
+  activeCoolDown: 2
+  p1UpKey: 119
+  p1DownKey: 115
+  p1LeftKey: 97
+  p1RightKey: 100
+  p1ActionKey: 32
+  p2UpKey: 273
+  p2DownKey: 274
+  p2LeftKey: 276
+  p2RightKey: 275
+  p2ActionKey: 13
+  mouseMoveSpeed: 250
+  puEffectTime: 60
+  puRangeRadius: 10
+  puForceMultiplier: 2500

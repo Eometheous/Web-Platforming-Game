@@ -31,6 +31,6 @@ public class CoOpCameraController : MonoBehaviour
     }
 
     private float SetZoomLevel() {
-        return Mathf.Clamp(((player1.transform.position - player2.transform.position)/2).magnitude, 7, 10);
+        return Mathf.Clamp(((player1.transform.position - player2.transform.position)/2).magnitude, 7, 20);
     }
 }

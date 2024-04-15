@@ -17,13 +17,13 @@ public class playerController : MonoBehaviour
 
     [Header("Movement")]
     public bool freeMovement = false;
-    public float forceMultiplier = 10.0f;
-    public float verticalForceMultiplier = 2.0f;
-    public float maxVerticalVelocity = 20.0f;
-    public float maxHorizontalVelocity = 12.5f;
-    public float slowFactor = 0.4f;
-    public float verticalRatio = 75.0f;
-    public float horizontalRatio = 50.0f;
+    public float forceMultiplier;
+    public float verticalForceMultiplier;
+    public float maxVerticalVelocity;
+    public float maxHorizontalVelocity;
+    public float slowFactor;
+    public float verticalRatio;
+    public float horizontalRatio;
     public bool reverseJump = false;
     public bool reverseKeys = false;
     [Space(10)]
