@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 897171844}
   - component: {fileID: 897171843}
   m_Layer: 5
-  m_Name: SettingsBtn
+  m_Name: ScoreBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -502,7 +502,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6116794119564027516, guid: f7f882685f2aba34aa5ab6631b653966, type: 3}
         m_TargetAssemblyTypeName: data, Assembly-CSharp
-        m_MethodName: navSettings
+        m_MethodName: navScores
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -845,7 +845,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Settings
+  m_text: Scores
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bb77dbc3f7ce854499b57f63829f65b2, type: 2}
   m_sharedMaterial: {fileID: -1305690319908863691, guid: bb77dbc3f7ce854499b57f63829f65b2, type: 2}
