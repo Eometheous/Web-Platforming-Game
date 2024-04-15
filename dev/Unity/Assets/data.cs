@@ -14,7 +14,7 @@ public class data : MonoBehaviour
     public string startGame = "Customize Players";
     public string lvlPicker = "Pick Level";
     public string tutorial = "Tutorial";
-    public string settings = "Settings";
+    public string scores = "Scores";
     public string title = "Title";
     public string basicLevel = "Basic Level";
     public string pong = "Pong";
@@ -110,9 +110,9 @@ public class data : MonoBehaviour
     {
         SceneManager.LoadScene(tutorial);
     }
-    public void navSettings()
+    public void navScores()
     {
-        SceneManager.LoadScene(settings);
+        SceneManager.LoadScene(scores);
     }
     public void navTitle()
     {
