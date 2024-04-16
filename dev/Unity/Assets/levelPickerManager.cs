@@ -51,7 +51,7 @@ public class levelPickerManager : MonoBehaviour
         {
             if (currentPick == "Lvl1")
             {
-                data.navBasicLevel();
+                data.navPlatformer();
             }
             else if (currentPick == "Lvl2")
             {
@@ -59,11 +59,11 @@ public class levelPickerManager : MonoBehaviour
             }
             else if (currentPick == "Lvl3")
             {
-                data.navStartGame();
+                data.navCOOP();
             }
             else
             {
-                data.navStartGame();
+                data.navLvlPicker();
             }
         }
     }

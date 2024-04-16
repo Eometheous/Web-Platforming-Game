@@ -17,7 +17,9 @@ public class data : MonoBehaviour
     public string scores = "Scores";
     public string title = "Title";
     public string basicLevel = "Basic Level";
+    public string platformer = "Race to Top Level";
     public string pong = "Pong";
+    public string coop = "CO-OP";
     [Space(15)]
 
 
@@ -121,6 +123,14 @@ public class data : MonoBehaviour
     public void navBasicLevel()
     {
         SceneManager.LoadScene(basicLevel);
+    }
+    public void navCOOP()
+    {
+        SceneManager.LoadScene(coop);
+    }
+    public void navPlatformer()
+    {
+        SceneManager.LoadScene(platformer);
     }
 
     public void navPong()
