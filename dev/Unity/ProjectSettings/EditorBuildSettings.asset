@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pong.unity
     guid: a3f77df989df4114b809549e6cddc3fb
+  - enabled: 1
+    path: Assets/Scenes/CO-OP.unity
+    guid: d6bf6252758b647ecac0985050c4633b
+  - enabled: 1
+    path: Assets/Scenes/Race to Top Level.unity
+    guid: 592da193686ae1441af42587192e104e
   m_configObjects: {}
