@@ -5,6 +5,7 @@ using UnityEngine;
 public class pongManager : MonoBehaviour
 {
     public data data;
+    public timer timer;
 
     public playerControllerFree p1;
     public playerControllerFree p2;
@@ -40,6 +41,8 @@ public class pongManager : MonoBehaviour
         p2.GetComponent<SpriteRenderer>().sprite = data.faceList[player2FaceNum].GetComponent<SpriteRenderer>().sprite;
         int player2ColorNum = PlayerPrefs.GetInt(data.p2ColorNum, 0);
         p2.GetComponent<SpriteRenderer>().color = data.colorList[player2ColorNum].GetComponent<SpriteRenderer>().color;
+
+        timer.startTimer();
     }
 
     void Update()
@@ -56,7 +59,8 @@ public class pongManager : MonoBehaviour
 
         if (p1Score == winBy || p2Score == winBy)
         {
-            data.navLvlPicker();
+            timer.stopTimer();
+            data.navGameEnd();
         }
     }
 

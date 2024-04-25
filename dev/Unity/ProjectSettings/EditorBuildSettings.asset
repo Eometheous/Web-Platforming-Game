@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Race to Top Level.unity
     guid: 592da193686ae1441af42587192e104e
+  - enabled: 1
+    path: Assets/Scenes/Score Record.unity
+    guid: 1672bf3561101df47b79918ac3a42d50
   m_configObjects: {}

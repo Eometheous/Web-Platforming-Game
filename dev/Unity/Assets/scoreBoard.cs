@@ -1,7 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerData
@@ -31,17 +30,14 @@ public class scoreBoard : MonoBehaviour
 
     void Start()
     {
-        //namesList = new List<string> { "p1", "p2", "p3", "p4" };
-        //timesList = new List<string> { "1.01", "4.83", "2.50", "3.12" };
+        string PlayerPrefsKey = curGameMode.ToString() + "NameList";
+        string PlayerPrefsKeyTime = curGameMode.ToString() + "TimeList";
 
-        while (namesList.Count < 20)
+        if (PlayerPrefs.HasKey(PlayerPrefsKey))
         {
-            namesList.Add("p" + (namesList.Count + 1));
-        }
-
-        while (timesList.Count < 20)
-        {
-            timesList.Add(Random.Range(1.0f, 10.0f).ToString("F2"));
+            Debug.Log("hasKey");
+            namesList = PlayerPrefs.GetString(PlayerPrefsKey).Split(',').ToList();
+            timesList = PlayerPrefs.GetString(PlayerPrefsKeyTime).Split(',').ToList();
         }
 
         if (namesList.Count > 0)

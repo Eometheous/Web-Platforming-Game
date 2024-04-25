@@ -20,6 +20,7 @@ public class data : MonoBehaviour
     public string platformer = "Race to Top Level";
     public string pong = "Pong";
     public string coop = "CO-OP";
+    public string scoreRecord = "Score Record";
     [Space(15)]
 
 
@@ -88,6 +89,13 @@ public class data : MonoBehaviour
         push
     }
 
+    public enum gameMode
+    {
+        platform,
+        pong,
+        coop
+    }
+
 
     // Player Type (1 or 2)
     public enum playerNum
@@ -136,5 +144,9 @@ public class data : MonoBehaviour
     public void navPong()
     {
         SceneManager.LoadScene(pong);
+    }
+
+    public void navGameEnd() {
+        SceneManager.LoadScene(scoreRecord);
     }
 }

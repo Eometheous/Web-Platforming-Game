@@ -3409,7 +3409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9076475ba4aa6094e816cf55598346a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curGameMode: 0
+  curGameMode: 2
   namesList: []
   timesList: []
   exName: {fileID: 262816655}
@@ -3464,7 +3464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9076475ba4aa6094e816cf55598346a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curGameMode: 0
+  curGameMode: 1
   namesList: []
   timesList: []
   exName: {fileID: 457433889}
