@@ -24,6 +24,10 @@ public class Levatate : MonoBehaviour
         levatating = true;
     }
 
+    public void OnTriggerStay2D(Collider2D collider) {
+        levatating = true;
+    }
+
     public void OnTriggerExit2D(Collider2D collider) {
         levatating = false;
     }
