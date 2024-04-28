@@ -195,6 +195,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -2.19
       objectReference: {fileID: 0}
+    - target: {fileID: 7517939655181127799, guid: 97ae2e70b50ac49e4b37f2765b0e4b1e, type: 3}
+      propertyPath: m_TagString
+      value: Platform
+      objectReference: {fileID: 0}
     - target: {fileID: 7771503899247074354, guid: 97ae2e70b50ac49e4b37f2765b0e4b1e, type: 3}
       propertyPath: m_Name
       value: Building3
