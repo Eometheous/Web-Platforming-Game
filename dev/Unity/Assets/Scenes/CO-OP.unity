@@ -4299,6 +4299,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 527708347}
     m_Modifications:
+    - target: {fileID: 1315025160614427226, guid: 6476028fdde13e845bae186cbd3fcac5, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 1576269591}
+    - target: {fileID: 1315025160614427226, guid: 6476028fdde13e845bae186cbd3fcac5, type: 3}
+      propertyPath: curGameMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1486904001230482961, guid: 6476028fdde13e845bae186cbd3fcac5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4393,6 +4401,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1486904001230482961, guid: 6476028fdde13e845bae186cbd3fcac5, type: 3}
   m_PrefabInstance: {fileID: 1344045823}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1344045825 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1315025160614427226, guid: 6476028fdde13e845bae186cbd3fcac5, type: 3}
+  m_PrefabInstance: {fileID: 1344045823}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e816d8573b94414409327c2cd6feb55a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1378811891
 GameObject:
   m_ObjectHideFlags: 0
@@ -4685,6 +4704,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4326439c7c226c7468957aad41994fe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1576269591 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6116794119564027516, guid: b30571f2417c74167b7e0862521bd6a5, type: 3}
+  m_PrefabInstance: {fileID: 1641880409}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7028beb3b76b94e45864b98efae65b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1586116887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4853,7 +4883,7 @@ PrefabInstance:
     - target: {fileID: 8740971482926463797, guid: c960f5358710947d380890a7b5a20769, type: 3}
       propertyPath: timer
       value: 
-      objectReference: {fileID: 1315025160614427226, guid: 6476028fdde13e845bae186cbd3fcac5, type: 3}
+      objectReference: {fileID: 1344045825}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
