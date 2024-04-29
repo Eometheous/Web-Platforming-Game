@@ -29,10 +29,8 @@
 		- Have Unity installed
 		- Open Unity and open the game by navigating and selecting the dev/Unity folder
 		- Inside of Unity
-			- Open assets/scenes/Basic Level
+			- Open assets/scenes/Title
 			- Press the play button up the top of the window
-			- Current scene: you should see a basic platformer level with two characters 
-			- Move player1 using WASD and player2 using arrow keys
 	- (Option 2) Just playing on Itch.io
 		- This option is for if you just want to play the game quickly (works on most browsers)
 		- Go to this link:
