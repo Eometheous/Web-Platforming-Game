@@ -7,21 +7,21 @@
 - GitHub URLS: https://github.com/Eometheous/Web-Platforming-Game
 
 - Job Assignments: 
-  - Jonathan: Front-end flask developer. Back-end SQL. Unity Developer 
-  - Anh: Unity Developer. Level Designer. Sound Designer
-  - Logan: Character sprites and animations. Unity Developer
+  - Jonathan: Movement Physics, Unity Developer (Game mode 3)
+  - Anh: Sprites, Unity Developer (Game mode 2, tutorial, other minor transition scenes)
+  - Logan: Unity Developer (Game mode 1)
 
 - Milestones with deadlines:
   - M1 (2/6 - 2/15): All document details, product specifications, Adobe XD Prototype, and Setting up code and game engine
-  - M2 (2/20 - 2/29): Based on movement and platform, set up log-in and sign-out
-  - M3 (3/5 - 3/14): Store user’s basic data in the database, Set up Lvl 1, Add shooting mechanics, Check that Unity works on the website after signing in
-  - M4 (3/19 - 3/28): Lvl 2 & 3 
-  - M5 (4/2 - 4/11): Beautify the website and add starting screen
-  - M6 (4/16 - Finals): Minor adjustments and testing
+  - M2 (2/20 - 2/29): Set up basic movements and platforms
+  - M3 (3/5 - 3/14): Set up game mode 1, Check that Unity works on the itch.io
+  - M4 (3/19 - 3/28): Set up game mode 2 and 3, add minor transition scenes and scoreboard
+  - M5 (4/2 - 4/11): Finish up all three game modes
+  - M6 (4/16 - Finals): Beautify the website, minor adjustments, and testing
 
 - Front-end and backend technologies:
-  - Front-end: Svelte, Tailwind, Javascript, CSS, HTML, Unity, Asesprite
-  - Back-end: Flask, Python, C#, SQL
+  - Front-end: Unity, Itch.io
+  - Back-end: C#
 
 - Algorithms/AI schemes used in the core engine:
   - Leaderboard:
