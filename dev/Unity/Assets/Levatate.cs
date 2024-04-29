@@ -10,12 +10,12 @@ public class Levatate : MonoBehaviour
     public bool upDown;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Rigidbody2D rb = levatatedObject.GetComponent<Rigidbody2D>();
         if (levatating) {
-            if (upDown) rb.AddForce(-2 * rb.gravityScale * Vector2.down);
-            else rb.AddForce(2 * rb.gravityScale * Vector2.right);
+            if (upDown) rb.AddForce(-40 * rb.gravityScale * Vector2.down);
+            else rb.AddForce(20 * rb.gravityScale * Vector2.right);
         }
         else if (!upDown) rb.AddForce(rb.gravityScale * Vector2.left);
     }
