@@ -4,7 +4,9 @@
 
 - Current Leader (In order from left to right): Jonathan, Anh, Logan
 
-- GitHub URLS: https://github.com/Eometheous/Web-Platforming-Game
+- GitHub URL: https://github.com/Eometheous/Web-Platforming-Game
+
+- Deployment URL: https://byuntaeyeon02.itch.io/jal
 
 - Job Assignments: 
   - Jonathan: Movement Physics, Unity Developer (Game mode 3)
